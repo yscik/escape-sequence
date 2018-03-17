@@ -11,28 +11,32 @@ func _ready():
 #	pass
 
 var v = Vector2()
-export var UP = Vector2(0, -1)
+export var GRAVITY = Vector2(0, 10)
 
 func _physics_process(delta):
 	
 	platform_movement()
 	drive_anim()
 		
-	move_and_slide(v, UP)
+	move_and_slide(v, GRAVITY * -1)
 	pass
 	
 func platform_movement():
 	
-	v.y += 10
-	
 	if Input.is_key_pressed(KEY_LEFT):
-		v.x = -100
+		v.x = -200
 	elif Input.is_key_pressed(KEY_RIGHT):
-		v.x = 100
+		v.x = 200
 	else:
 		v.x = 0
-	if Input.is_key_pressed(KEY_UP):
-		v.y = -200
+	
+	if is_on_floor():		
+		if Input.is_key_pressed(KEY_UP):
+			v.y = -400
+		else:
+			v.y = 0
+	else:
+		v = v + GRAVITY 
 
 func drive_anim():
 	
@@ -41,5 +45,9 @@ func drive_anim():
 	var anim = "Idle";
 	if(v.x != 0):
 		anim = "Walk"
+	if(v.y < 0):
+		anim = "Jump"
+	if(v.y > GRAVITY.y):
+		anim = "Fall"
 	
 	$AnimatedSprite.play(anim)
