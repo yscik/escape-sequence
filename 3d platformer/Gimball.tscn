@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://3d platformer/Gimball.gd" type="Script" id=1]
+[ext_resource path="res://3d platformer/Camera.gd" type="Script" id=2]
+
+
+
+[node name="Gimball" type="Spatial"]
+
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -0.051789, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="InnerGimbal" type="Spatial" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera" type="Camera" parent="InnerGimbal" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 1
+current = false
+fov = 25.0
+size = 20.0
+near = 0.05
+far = 200.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="camera_update" from="InnerGimbal/Camera" to="." method="_on_Camera_camera_update"]
+
+
