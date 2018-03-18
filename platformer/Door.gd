@@ -1,4 +1,4 @@
-extends TextureButton
+extends Area2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -15,6 +15,9 @@ func _ready():
 #	pass
 
 
-func _gui_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		$EnterKey.set_collision_layer_bit(0, false)
+func on_player_enter(body):
+	get_node("../LevelContainer").set_collision_layer_bit(0, false)
+
+func on_player_leave(body):
+	get_node("../LevelContainer").set_collision_layer_bit(0, true)
+

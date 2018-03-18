@@ -1,8 +1,16 @@
-extends TextureButton
+extends Node
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+
+export var in_platformer = true
+var player_skills = {
+	right = false,
+	up = false,
+	down = false,
+	left = false,
+}
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -13,8 +21,3 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-
-func _gui_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		$EnterKey.set_collision_layer_bit(0, false)

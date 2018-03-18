@@ -1,26 +1,214 @@
-[gd_scene format=2]
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Levels/TitleScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://platformer/MockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://platformer/Door.gd" type="Script" id=4]
+[ext_resource path="res://assets/Grid.png" type="Texture" id=5]
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 512
+
+[sub_resource type="SegmentShape2D" id=3]
+
+custom_solver_bias = 0.0
+a = Vector2( -18.6989, 183.441 )
+b = Vector2( -19.3866, -453.44 )
+
+[sub_resource type="SegmentShape2D" id=4]
+
+custom_solver_bias = 0.0
+a = Vector2( 1150.9, 3.37074 )
+b = Vector2( 0, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 58.408 )
 
 [node name="Game" type="Node" index="0"]
 
-[node name="Label" type="Label" parent="." index="0"]
+script = ExtResource( 1 )
+in_platformer = true
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -7.0
-margin_right = 62.0
-margin_bottom = 7.0
+[node name="Meta" type="Node" parent="." index="0"]
+
+[node name="TitleScreen" parent="Meta" index="0" instance=ExtResource( 2 )]
+
+[node name="Level" type="Node2D" parent="Meta" index="1"]
+
+editor/display_folded = true
+position = Vector2( 127.291, 178.408 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelContainer" type="StaticBody2D" parent="Meta/Level" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Polygon2D" type="Polygon2D" parent="Meta/Level/LevelContainer" index="0"]
+
+polygon = PoolVector2Array( 0, 0, 1152, 0, 1152, 640, 0, 640 )
+uv = PoolVector2Array(  )
+color = Color( 0.953125, 0.930786, 0.930786, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = SubResource( 2 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = -90.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Material", "Texture", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line2D" type="Line2D" parent="Meta/Level/LevelContainer" index="1"]
+
+points = PoolVector2Array( 1152, 0, 1152, 640, 0, 640, 0, 0, 1152, 0 )
+width = 10.0
+default_color = Color( 0.882812, 0.882812, 0.882812, 1 )
+texture_mode = -1110917834
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Border", "Capping", "Fill" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LeftEdge" type="CollisionShape2D" parent="Meta/Level/LevelContainer" index="2"]
+
+position = Vector2( 19.0955, 458.032 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightEdge" type="CollisionShape2D" parent="Meta/Level/LevelContainer" index="3"]
+
+position = Vector2( 1169.45, 460.082 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TopEdge" type="CollisionShape2D" parent="Meta/Level/LevelContainer" index="4"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomEdge" type="CollisionShape2D" parent="Meta/Level/LevelContainer" index="5"]
+
+position = Vector2( 1.52588e-05, 632.999 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="Meta/Level" index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196615, 0, 196608, 196616, 0, 131076, 196617, 0, 196610, 262152, 0, 131077, 458767, 0, 1, 458768, 0, 65536, 458769, 0, 2, 524293, 0, 5, 524303, 0, 131073, 524304, 0, 196619, 524305, 0, 131074, 589824, 0, 196608, 589825, 0, 196609, 589826, 0, 196609, 589827, 0, 196609, 589828, 0, 196609, 589829, 0, 196611, 589830, 0, 196609, 589831, 0, 196609, 589832, 0, 196609, 589833, 0, 196609, 589834, 0, 196609, 589835, 0, 196609, 589836, 0, 196609, 589837, 0, 196609, 589838, 0, 196609, 589839, 0, 65544, 589840, 0, 131072, 589841, 0, 65538 )
+_sections_unfolded = [ "Collision", "Occluder" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Door" type="Area2D" parent="Meta/Level" index="2"]
+
+position = Vector2( -0.463547, 581.104 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta/Level/Door" index="0"]
+
+position = Vector2( 0, -60 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Meta" index="2"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Meta/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Grid" type="TextureRect" parent="Meta/ParallaxBackground/ParallaxLayer" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1297.0
+margin_top = -555.0
+margin_right = 703.0
+margin_bottom = 1445.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Commit Test"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 2
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 6 )]
+
+[connection signal="body_entered" from="Meta/Level/Door" to="Meta/Level/Door" method="on_player_enter"]
+
+[connection signal="body_exited" from="Meta/Level/Door" to="Meta/Level/Door" method="on_player_leave"]
 
 

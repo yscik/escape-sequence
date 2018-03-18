@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Meta"
-run/main_scene="res://platformer/Level.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [rendering]
