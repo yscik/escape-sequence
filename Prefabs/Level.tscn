@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://platformer/MockTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://platformer/Door.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/Level.gd" type="Script" id=1]
+[ext_resource path="res://platformer/MockTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://platformer/Door.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
 
@@ -33,7 +34,11 @@ extents = Vector2( 10, 58.408 )
 
 [node name="Level" type="Node2D"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+needed_skills = {
+"right": true
+}
 
 [node name="LevelContainer" type="StaticBody2D" parent="." index="0"]
 
@@ -92,7 +97,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -128,37 +133,41 @@ __meta__ = {
 
 [node name="Entry" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
-position = Vector2( -0.463547, 581.104 )
+position = Vector2( 16.157, 552.295 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 2
+collision_mask = 16
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
-_sections_unfolded = [ "Collision", "Transform" ]
+script = ExtResource( 3 )
+_sections_unfolded = [ "Audio Bus", "Transform" ]
+entry = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entry" index="0"]
 
-position = Vector2( 0, -60 )
+position = Vector2( -14.4044, -34.5152 )
 shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Exit" type="Area2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 1154.32, 455.262 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 2
+collision_mask = 16
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Collision", "Transform" ]
+entry = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
 

@@ -14,10 +14,13 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+export var entry = true;
 
 func on_player_enter(body):
-	get_node("../LevelContainer").set_collision_layer_bit(0, false)
+	set_level_edge_collision(false)
 
 func on_player_leave(body):
-	get_node("../LevelContainer").set_collision_layer_bit(0, true)
+	set_level_edge_collision(true)
 
+func set_level_edge_collision(enabled): 
+	get_node("../LevelContainer").set_collision_layer_bit(0, enabled)

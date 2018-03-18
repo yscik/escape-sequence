@@ -78,8 +78,9 @@ skill = ""
 
 [node name="Key" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0, -5 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 

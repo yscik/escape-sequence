@@ -11,6 +11,8 @@ var player_skills = {
 	down = false,
 	left = false,
 }
+var player = null
+var level = null
 
 func _ready():
 	# Called every time the node is added to the scene.

@@ -1,12 +1,9 @@
 extends KinematicBody2D
-onready var game = get_node("/root/Game")
-onready var skills = game.player_skills
+
+onready var skills = State.player_skills
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	
-	
+	State.player = self
 	pass
 
 #func _process(delta):
@@ -19,7 +16,7 @@ export var GRAVITY = Vector2(0, 10)
 
 func _physics_process(delta):
 	
-	if game.in_platformer:
+	if State.in_platformer:
 		platform_movement()
 		
 	drive_anim()
@@ -39,8 +36,8 @@ func platform_movement():
 	if is_on_floor():		
 		if skills.up && Input.is_key_pressed(KEY_UP):
 			v.y = -400
-		else:
-			v.y = 0
+#		else:
+#			v.y = 0
 	else:
 		v = v + GRAVITY 
 
@@ -53,7 +50,7 @@ func drive_anim():
 		anim = "Walk"
 	if(v.y < 0):
 		anim = "Jump"
-	if(v.y > GRAVITY.y):
+	if(!is_on_floor() && v.y > GRAVITY.y):
 		anim = "Fall"
 	
 	$AnimatedSprite.play(anim)
