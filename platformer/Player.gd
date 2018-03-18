@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 onready var skills = State.player_skills
 
+var attached = false
+
 func _ready():
 	State.player = self
 	pass
@@ -54,3 +56,10 @@ func drive_anim():
 		anim = "Fall"
 	
 	$AnimatedSprite.play(anim)
+	
+func die_and_respawn(spawn_pos):
+	$Animations.play("Death")
+	yield($Animations, "animation_finished")
+	global_position = spawn_pos
+	$Animations.play("Death", -1, -2, true)
+	pass

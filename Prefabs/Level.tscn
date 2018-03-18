@@ -36,13 +36,14 @@ extents = Vector2( 10, 58.408 )
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-needed_skills = {
-"right": true
-}
+skill_right = true
+skill_left = false
+skill_up = false
+skill_down = false
+skill_grab = false
 
 [node name="LevelContainer" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 0
@@ -67,9 +68,6 @@ texture_rotation_degrees = -90.0
 invert_enable = false
 invert_border = 100.0
 _sections_unfolded = [ "Material", "Texture", "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LeftEdge" type="CollisionShape2D" parent="LevelContainer" index="1"]
 

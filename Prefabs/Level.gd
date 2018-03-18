@@ -1,14 +1,13 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-export var needed_skills = {
-	right = true
-}
+export var skill_right = true
+export var skill_left = false
+export var skill_up = false
+export var skill_down = false
+export var skill_grab = false
 
 func _ready():
-	if !State.player:
+	if !State.player.attached:
 		add_player()
 	pass
 
@@ -22,16 +21,17 @@ func exit():
 
 	
 func add_player():
-	var player = load("res://Prefabs/Player.tscn").instance()
-	add_child(player)
-	respawn_player()
-	
-	for skill in needed_skills:
-		State.player_skills[skill] = needed_skills[skill]
+	State.player.attached = true
+	State.player.global_position = $Entry.global_position
+	for skill in State.player_skills:
+		State.player_skills[skill] = self["skill_"+skill]
 		
 func respawn_player():
-	State.player.global_position = $Entry.global_position
+	State.player.die_and_respawn($Entry.global_position)
 
 func enemy_hit(body):
 	respawn_player()
-	pass # replace with function body
+
+func depth_hit(body):
+	respawn_player()
+

@@ -9,3 +9,5 @@ func activate():
 func player_collects(body):
 	$AnimationPlayer.play("Pickup")
 	activate()
+	yield($AnimationPlayer, "animation_finished")
+	queue_free()

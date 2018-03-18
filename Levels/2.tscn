@@ -1,0 +1,272 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Prefabs/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://platformer/MockTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/LeftKey.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "MovePlatform"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "MovePlatform"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "MovePlatform"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 232.24, 10 )
+
+[node name="Level" instance=ExtResource( 1 )]
+
+skill_up = true
+
+[node name="TileMap" parent="." index="1"]
+
+tile_data = PoolIntArray( -196595, 0, 196608, -196594, 0, 196609, -196593, 0, 196609, -196592, 0, 196609, -196591, 0, 7, -131055, 0, 65541, -65526, 0, 1, -65525, 0, 2, -65519, 0, 65541, 9, 0, 196608, 10, 0, 65544, 11, 0, 65547, 12, 0, 196610, 17, 0, 131077, 393216, 0, 1, 393217, 0, 2, 393221, 0, 1, 393222, 0, 2, 393232, 0, 1, 393233, 0, 2, 458752, 0, 131073, 458753, 0, 65539, 458754, 0, 2, 458757, 0, 65537, 458758, 0, 65547, 458759, 0, 196610, 458767, 0, 1, 458768, 0, 65540, 458769, 0, 131074, 524288, 0, 131073, 524289, 0, 196619, 524290, 0, 131074, 524303, 0, 131073, 524304, 0, 196619, 524305, 0, 131074, 589824, 0, 65537, 589825, 0, 131072, 589826, 0, 65547, 589827, 0, 196609, 589828, 0, 196609, 589829, 0, 196609, 589830, 0, 196609, 589831, 0, 196609, 589832, 0, 196610, 589839, 0, 65537, 589840, 0, 131072, 589841, 0, 65538 )
+
+[node name="Entry" parent="." index="3"]
+
+position = Vector2( 15.3987, 345.227 )
+
+[node name="Exit" parent="." index="4"]
+
+position = Vector2( 1019.95, 4.31245 )
+rotation = -1.5708
+
+[node name="Platform2" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 510.746, 305.229 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2" index="0"]
+
+root_node = NodePath("..")
+autoplay = "MovePlatform"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.5
+anims/MovePlatform = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Platform" type="TileMap" parent="Platform2" index="1"]
+
+position = Vector2( 28.9194, 0 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 0.3
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 196608, 1, 0, 196610 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Platform3" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 833.317, 101.422 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform3" index="0"]
+
+root_node = NodePath("..")
+autoplay = "MovePlatform"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.5
+anims/MovePlatform = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Platform" type="TileMap" parent="Platform3" index="1"]
+
+position = Vector2( 28.9194, 0 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 0.3
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 196608, 1, 0, 196610 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Platform4" type="Node2D" parent="." index="7"]
+
+position = Vector2( 693.701, 207.34 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform4" index="0"]
+
+root_node = NodePath("..")
+autoplay = "MovePlatform"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.5
+anims/MovePlatform = SubResource( 3 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Platform" type="TileMap" parent="Platform4" index="1"]
+
+position = Vector2( 28.9194, 0 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 0.3
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 196608, 1, 0, 196610 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Node2D" type="Node2D" parent="." index="8"]
+
+position = Vector2( 803.317, 633.37 )
+
+[node name="Death" type="Area2D" parent="Node2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 16
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Death" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D" index="1"]
+
+position = Vector2( -177.813, -17 )
+polygon = PoolVector2Array( -2.25073, -32.3768, 144.622, -33.0422, 145.098, -6.64337, 75.1767, -6.64337, 75.3696, 27.9944, 65.4183, 28.2175, 65.6636, -7.11902, -2.11713, -7.59467 )
+uv = PoolVector2Array(  )
+color = Color( 0.300781, 0.0892944, 0.0892944, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="Node2D/Polygon2D" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = -28.0
+margin_right = 140.0
+margin_bottom = -14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Mistakes were made"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Pickup" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 1058.49, 357.578 )
+skill = "left"
+
+[node name="Key" parent="Pickup" index="0"]
+
+texture = ExtResource( 4 )
+
+[connection signal="body_entered" from="Node2D/Death" to="." method="depth_hit"]
+
+
+[editable path="Pickup"]

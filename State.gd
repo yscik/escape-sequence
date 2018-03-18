@@ -10,6 +10,7 @@ var player_skills = {
 	up = false,
 	down = false,
 	left = false,
+	grab = false
 }
 var player = null
 var level = null
