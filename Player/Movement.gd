@@ -3,6 +3,7 @@ var player
 var skills
 var animator
 var enabled = true
+onready var in_platformer = State.in_platformer
 
 func _init(player):
 	self.player = player
@@ -17,12 +18,21 @@ func update():
 
 	if !enabled: return
 	
-	if State.in_platformer:
+	if State.in_platformer && !in_platformer:
+		topdown_exit()
+	
+	if !State.in_platformer && in_platformer:
+		platform_exit()
+	
+	in_platformer = State.in_platformer
+	
+	if in_platformer:
 		platform_movement()		
 		platform_anim()
 	else:
 		topdown_movement()		
 		topdown_anim()
+		
 	
 func platform_movement():
 	
@@ -45,7 +55,6 @@ func platform_movement():
 
 func platform_anim():
 	
-	player.global_rotation = 0
 	var anim = "Idle"
 	
 	if v.x < -1 && !flipped || v.x > 1 && flipped:
@@ -62,7 +71,13 @@ func platform_anim():
 	
 	animator.play(anim)
 	
+func platform_exit():
+	if flipped:
+		player.scale.x = -1
 	
+	flipped = false
+
+
 func speed(direction, accel):
 	v[direction] = min(200, abs(v[direction]) + 4) * accel
 	
@@ -92,3 +107,6 @@ func topdown_anim():
 		player.look_at(player.global_position + v)
 
 	animator.play(anim)
+	
+func topdown_exit():
+	player.look_at(player.global_position + Vector2(1,0))
