@@ -18,9 +18,11 @@ func update():
 	if !enabled: return
 	
 	if State.in_platformer:
-		platform_movement()	
-	player.move_and_slide(v, GRAVITY * -1)
-	drive_anim()
+		platform_movement()		
+		platform_anim()
+	else:
+		topdown_movement()		
+		topdown_anim()
 	
 func platform_movement():
 	
@@ -31,22 +33,25 @@ func platform_movement():
 	else:
 		v.x = 0
 	
-	if player.is_on_floor():		
+	if player.is_on_floor():
 		if skills.up && Input.is_key_pressed(KEY_UP):
 			v.y = -400
 #		else:
 #			v.y = 0
 	else:
 		v = v + GRAVITY 
+		
+	player.move_and_slide(v, GRAVITY * -1)
 
-func drive_anim():
+func platform_anim():
 	
+	player.global_rotation = 0
 	var anim = "Idle"
 	
 	if v.x < -1 && !flipped || v.x > 1 && flipped:
 		flipped = !flipped
 		player.scale.x = -1
-	
+#		animator.flip_h = flipped
 	
 	if(v.x != 0):
 		anim = "Walk"
@@ -57,3 +62,33 @@ func drive_anim():
 	
 	animator.play(anim)
 	
+	
+func speed(direction, accel):
+	v[direction] = min(200, abs(v[direction]) + 4) * accel
+	
+func topdown_movement():
+	
+	if skills.left && Input.is_key_pressed(KEY_LEFT):
+		speed("x", -1)
+	elif skills.right && Input.is_key_pressed(KEY_RIGHT):
+		speed("x", 1)
+	else:
+		v.x = 0
+	
+	if skills.up && Input.is_key_pressed(KEY_UP):
+		speed("y", -1)
+	elif skills.down && Input.is_key_pressed(KEY_DOWN):
+		speed("y", 1)
+	else:
+		v.y = 0
+		
+	player.move_and_slide(v)
+
+func topdown_anim():
+	
+	var anim = "Topdown"	
+	
+	if(v.length() > 0):
+		player.look_at(player.global_position + v)
+
+	animator.play(anim)

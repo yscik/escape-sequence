@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Prefabs/Platformer.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 512
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.1259, 31.8523 )
+
+[node name="Platformer" type="Polygon2D"]
+
+position = Vector2( -1248, -1088 )
+scale = Vector2( 3.06359, 2.70225 )
+polygon = PoolVector2Array( 0, 0, 1152, 0, 1152, 640, 0, 640 )
+uv = PoolVector2Array(  )
+color = Color( 0.953125, 0.930786, 0.930786, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = SubResource( 2 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = -90.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Material", "Texture", "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+position = Vector2( 575.33, 320.778 )
+scale = Vector2( 17.9775, 10.0516 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 16
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, -0.0645599 )
+scale = Vector2( 1, 0.998148 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="player_enter"]
+
+[connection signal="body_exited" from="Area2D" to="Area2D" method="player_exit"]
+
+

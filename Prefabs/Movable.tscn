@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://assets/MovableMark.png" type="Texture" id=1]
-[ext_resource path="res://Prefabs/Movable.gd" type="Script" id=2]
 
-[node name="Movable" type="NinePatchRect" index="0"]
+[node name="Movable" type="NinePatchRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -22,7 +21,6 @@ patch_margin_left = 40
 patch_margin_top = 40
 patch_margin_right = 40
 patch_margin_bottom = 40
-script = ExtResource( 2 )
 _sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect" ]
 
 
