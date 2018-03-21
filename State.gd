@@ -14,6 +14,9 @@ var player_skills = {
 }
 var player = null
 var level = null
+var game = null
+
+var checkpoint = null
 
 func _ready():
 	# Called every time the node is added to the scene.

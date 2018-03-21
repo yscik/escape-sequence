@@ -23,6 +23,7 @@ Player="*res://Prefabs/Player.tscn"
 
 2d_physics/layer_1="map"
 2d_physics/layer_2="objects"
+2d_physics/layer_3="movable"
 2d_physics/layer_5="player"
 
 [rendering]

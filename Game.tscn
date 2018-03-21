@@ -1,63 +1,57 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/Grid.png" type="Texture" id=1]
-[ext_resource path="res://Levels/TitleScreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/Grid.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
+
+script = ExtResource( 1 )
+spawn = 5
 
 [node name="Meta" type="Node" parent="." index="0"]
 
-[node name="Grid" type="TextureRect" parent="Meta" index="0"]
+[node name="Area-2" type="Node2D" parent="Meta" index="0"]
+
+position = Vector2( 1280.26, -1357.69 )
+
+[node name="Grid" type="TextureRect" parent="Meta/Area-2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1369.0
-margin_top = -887.0
-margin_right = 4681.0
-margin_bottom = 1113.0
+margin_left = -2804.0
+margin_top = -449.0
+margin_right = 4060.0
+margin_bottom = 3144.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 stretch_mode = 2
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="TitleScreen" parent="Meta" index="1" instance=ExtResource( 2 )]
+[node name="Area-1" parent="Meta" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( -401.36, 188.061 )
+[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy" index="0"]
 
-[node name="Floor" parent="Meta/TitleScreen" index="1"]
+frame = 1
 
-position = Vector2( -173.344, 303.706 )
+[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy2" index="0"]
 
-[node name="Entry" type="Node2D" parent="Meta/TitleScreen" index="4"]
+frame = 0
 
-position = Vector2( -80.1688, -46.7651 )
+[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy3" index="0"]
 
-[node name="Level-1" parent="Meta" index="2" instance=ExtResource( 3 )]
+frame = 0
 
-position = Vector2( 215.006, 174.308 )
+[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy4" index="0"]
 
-[node name="Level-2" parent="Meta" index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 1367.03, 277.123 )
-
-[node name="Level-3" parent="Meta" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 916.026, -466.499 )
-
-[node name="Level-4" parent="Meta" index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 394.589, -592.391 )
+frame = 1
 
 
-[editable path="Meta/TitleScreen"]
+[editable path="Meta/Area-1"]
