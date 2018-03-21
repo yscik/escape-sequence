@@ -1,4 +1,4 @@
 extends Area2D
 
 func body_entered(body):
-	State.game.kill_player()
+	State.player.die_and_respawn()

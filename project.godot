@@ -16,8 +16,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-State="*res://State.gd"
-Player="*res://Prefabs/Player.tscn"
+State="*res://Game/State.gd"
+Player="*res://Player/Player.tscn"
 
 [layer_names]
 

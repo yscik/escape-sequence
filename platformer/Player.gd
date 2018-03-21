@@ -20,11 +20,11 @@ func _physics_process(delta):
 func spawn(pos):
 	global_position = pos
 
-func die_and_respawn(spawn_pos):
+func die_and_respawn():
 	movement.enabled = false
 	$Animations.play("Death")
 	yield($Animations, "animation_finished")
-	spawn(spawn_pos)
+	spawn(State.checkpoint.global_position)
 	$Animations.play("Death", -1, -2, true)
 	movement.enabled = true
 	pass

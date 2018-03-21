@@ -1,30 +1,30 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Game/SetSpawn.gd" type="Script" id=1]
 [ext_resource path="res://assets/Grid.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
 
 [node name="Game" type="Node"]
 
 script = ExtResource( 1 )
-spawn = 5
+spawn = 0
 
 [node name="Meta" type="Node" parent="." index="0"]
 
-[node name="Area-2" type="Node2D" parent="Meta" index="0"]
+[node name="Workshop-2" type="Node2D" parent="Meta" index="0"]
 
-position = Vector2( 1280.26, -1357.69 )
+position = Vector2( 2667.82, -1378.71 )
 
-[node name="Grid" type="TextureRect" parent="Meta/Area-2" index="0"]
+[node name="Grid" type="TextureRect" parent="Meta/Workshop-2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -2804.0
-margin_top = -449.0
-margin_right = 4060.0
-margin_bottom = 3144.0
+margin_left = -2728.0
+margin_top = -953.0
+margin_right = 4136.0
+margin_bottom = 2640.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -35,23 +35,28 @@ texture = ExtResource( 2 )
 stretch_mode = 2
 _sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="Area-1" parent="Meta" index="1" instance=ExtResource( 3 )]
+[node name="TileMap" type="TileMap" parent="Meta/Workshop-2" index="1"]
 
-[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy" index="0"]
+mode = 0
+tile_set = null
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
 
-frame = 1
+[node name="Platform-1" parent="Meta" index="1" instance=ExtResource( 3 )]
 
-[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy2" index="0"]
-
-frame = 0
-
-[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy3" index="0"]
-
-frame = 0
-
-[node name="Enemy" parent="Meta/Area-1/Level-1/Enemy4" index="0"]
-
-frame = 1
+editor/display_folded = true
 
 
-[editable path="Meta/Area-1"]
