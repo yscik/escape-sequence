@@ -47,6 +47,7 @@ radius = 10.0
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
+position = Vector2( -478.149, 139.673 )
 z_index = 1
 z_as_relative = false
 input_pickable = false
@@ -135,6 +136,7 @@ shape = SubResource( 3 )
 
 [node name="Line2D" type="Line2D" parent="Grab/CollisionShape2D" index="0"]
 
+visible = false
 points = PoolVector2Array( -5.35019, 0.265305, 5.83856, 0.44014 )
 width = 10.0
 default_color = Color( 0.4, 0.5, 1, 1 )
