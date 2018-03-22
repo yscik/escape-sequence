@@ -3,11 +3,11 @@ extends Area2D
 var OFFSET = Vector2(32,32)
 export var tile = -1
 export var hideSprite = true
-
+export var on = true
 var content = null
 
 func _ready():
-	on()
+	if(on): on()
 
 func off():
 	if content != null: 

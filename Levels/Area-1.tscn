@@ -320,7 +320,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 31.6766, 32.949 )
 
-[node name="Area-1" type="Node" index="0"]
+[node name="Area-1" type="Node"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -735,7 +735,6 @@ scale = Vector2( 112.345, 0.547813 )
 
 [node name="Level-3" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 578.405, -639.461 )
 _sections_unfolded = [ "Transform" ]
 
@@ -758,6 +757,7 @@ __meta__ = {
 }
 tile = -1
 hideSprite = true
+on = true
 
 [node name="Sprite" type="Sprite" parent="Level-3/Door" index="0"]
 
@@ -797,6 +797,7 @@ __meta__ = {
 }
 tile = -1
 hideSprite = true
+on = true
 
 [node name="Sprite" type="Sprite" parent="Level-3/Door2" index="0"]
 
@@ -820,10 +821,6 @@ shape = SubResource( 18 )
 [node name="Checkpoint" parent="Level-3" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1310.24, 599.88 )
-skill_left = true
-skill_up = true
-skill_down = true
-skill_grab = true
 
 [node name="Level-4" type="Node2D" parent="." index="6"]
 
@@ -833,34 +830,31 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-4" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 237.184, 160.27 )
-skill_left = true
-skill_up = true
-skill_down = true
-skill_grab = true
 
 [node name="Tile" parent="Level-4" index="1" instance=ExtResource( 18 )]
+
+on = true
 
 [node name="Tile2" parent="Level-4" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 109.184, 160.27 )
+on = true
 
 [node name="Tile3" parent="Level-4" index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 1005.18, -95.73 )
+on = true
 
 [node name="Level-5" type="Node2D" parent="." index="7"]
 
 [node name="Checkpoint" parent="Level-5" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 2016, -864 )
-skill_left = true
-skill_up = true
-skill_down = true
-skill_grab = true
 
 [node name="Tile4" parent="Level-5" index="1" instance=ExtResource( 18 )]
 
 position = Vector2( 1888, -928 )
+on = true
 
 
 [editable path="Level-1/UpKey"]
