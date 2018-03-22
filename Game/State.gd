@@ -13,7 +13,7 @@ var player_skills = {
 	grab = false
 }
 var player = null
-var level = null
+var area = null
 var game = null
 
 var checkpoint = null

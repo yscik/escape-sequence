@@ -4,14 +4,16 @@
 [ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-spawn = 7
+spawn = 5
 
 [node name="Meta" type="Node" parent="." index="0"]
 
 [node name="Workshop-2" parent="Meta" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 3409.74, -1157.06 )
 
 [node name="Platform-1" parent="Meta" index="1" instance=ExtResource( 3 )]
 

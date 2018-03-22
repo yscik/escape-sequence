@@ -1,4 +1,4 @@
-extends Area2D
+extends CollisionObject2D
 
 var OFFSET = Vector2(32,32)
 export var tile = -1

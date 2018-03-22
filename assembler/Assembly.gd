@@ -1,18 +1,24 @@
 extends Node2D
 
 func _ready():
-	build()
-
+	pass
 
 func build():
 	
-	var cell = $TileMap.get_target()
+	print("build next")
+		
+	var map = $Level/TileMap
+	var cell = map.get_target()
 	
-	if !cell: return
+	if cell == null: return
 	
-	$Builder.build_block($TileMap.map_to_world(cell) + $TileMap.global_position + Vector2(32,32))
+	$Builder.build_block(map.to_global(map.map_to_world(cell) + Vector2(32,32)))
 	yield($Builder, "built")
-	$TileMap.add(cell)
+	map.add(cell)
 	
 	#yield(get_tree().create_timer(0.5), "timeout")
+	build()
+
+func start(area):
+	print("starting build")
 	build()
