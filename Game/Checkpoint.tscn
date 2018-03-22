@@ -21,10 +21,10 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Transform" ]
 skill_right = true
-skill_left = false
-skill_up = false
-skill_down = false
-skill_grab = false
+skill_left = true
+skill_up = true
+skill_down = true
+skill_grab = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

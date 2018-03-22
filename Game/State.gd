@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 
-export var in_platformer = true
+export var in_platformer = false
 var player_skills = {
 	right = false,
 	up = false,
