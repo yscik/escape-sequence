@@ -18,11 +18,13 @@ func _process(delta):
 func grab():
 	grabbed = target
 	grabbed.off()
+	grabbed.set_collision_mask_bit(4, false)
 	#grabbed.find_node("Movable").visible = true
 
 func drop():
 	grabbed.on()
 	#grabbed.find_node("Movable").visible = false
+	grabbed.set_collision_mask_bit(4, true)
 	grabbed = null
 
 func can_grab(area):
