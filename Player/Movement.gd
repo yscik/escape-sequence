@@ -2,13 +2,15 @@
 var player
 var skills
 var animator
+var character
 var enabled = true
 onready var in_platformer = State.in_platformer
 
 func _init(player):
 	self.player = player
 	skills = player.skills
-	animator = player.get_node("AnimatedSprite")
+	animator = player.get_node("Character/AnimatedSprite")
+	character = player.get_node("Character")
 
 var v = Vector2()
 var GRAVITY = Vector2(0, 10)
@@ -51,7 +53,7 @@ func platform_movement():
 	else:
 		v = v + GRAVITY 
 		
-	player.move_and_slide(v, GRAVITY * -1)
+	player.move_and_slide(v.rotated(State.area.global_rotation), GRAVITY.rotated(State.area.global_rotation) * -1)
 
 func platform_anim():
 	
@@ -59,8 +61,7 @@ func platform_anim():
 	
 	if v.x < -1 && !flipped || v.x > 1 && flipped:
 		flipped = !flipped
-		player.scale.x = -1
-#		animator.flip_h = flipped
+		flip()
 	
 	if(v.x != 0):
 		anim = "Walk"
@@ -70,14 +71,17 @@ func platform_anim():
 		anim = "Fall"
 	
 	animator.play(anim)
+	player.global_rotation = State.area.global_rotation
 	
 func platform_exit():
 	if flipped:
-		player.scale.x = -1
+		flip()
 	
 	flipped = false
 
-
+func flip():
+	character.scale.x = -1
+	
 func speed(direction, accel):
 	v[direction] = min(200, abs(v[direction]) + 4) * accel
 	
