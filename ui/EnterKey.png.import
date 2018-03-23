@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LeftKey.png-38e2ab686ef76d1f5380821f90bdebec.stex"
+path="res://.import/EnterKey.png-f5cf53bca3ae1bfe0ee983bec90f52e3.stex"
 
 [deps]
 
-source_file="res://assets/LeftKey.png"
-source_md5="dd7561584f6196d3df331f06b2efd20e"
+source_file="res://ui/EnterKey.png"
+source_md5="a3e4f61fb34e49437f57a6ca04e12542"
 
-dest_files=[ "res://.import/LeftKey.png-38e2ab686ef76d1f5380821f90bdebec.stex" ]
-dest_md5="0257e7d2b56fbe954b661f2e7a73abfb"
+dest_files=[ "res://.import/EnterKey.png-f5cf53bca3ae1bfe0ee983bec90f52e3.stex" ]
+dest_md5="d1ce671c82bafbb123e5b23bc9752869"
 
 [params]
 

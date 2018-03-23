@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovableMark.png-fa9a1961ab28956af1765e1a15f00f71.stex"
+path="res://.import/LeftKey.png-9155366e4574490b4b0fdd5396ff2ac0.stex"
 
 [deps]
 
-source_file="res://assets/MovableMark.png"
-source_md5="37c239dc9482b587561e9aeb202c4f33"
+source_file="res://ui/LeftKey.png"
+source_md5="dd7561584f6196d3df331f06b2efd20e"
 
-dest_files=[ "res://.import/MovableMark.png-fa9a1961ab28956af1765e1a15f00f71.stex" ]
-dest_md5="9e4659ea50d4f9fd36545e416a453cfc"
+dest_files=[ "res://.import/LeftKey.png-9155366e4574490b4b0fdd5396ff2ac0.stex" ]
+dest_md5="0257e7d2b56fbe954b661f2e7a73abfb"
 
 [params]
 
@@ -21,7 +21,7 @@ compress/normal_map=0
 flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

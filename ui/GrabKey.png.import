@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EnterKey.png-8d946f0c12373b953862fe4933ad3b25.stex"
+path="res://.import/GrabKey.png-5483d6ed26a2a1887662eae6a317830a.stex"
 
 [deps]
 
-source_file="res://assets/EnterKey.png"
-source_md5="a3e4f61fb34e49437f57a6ca04e12542"
+source_file="res://ui/GrabKey.png"
+source_md5="3c62d7cc825bf9510f47a810f4ab1c42"
 
-dest_files=[ "res://.import/EnterKey.png-8d946f0c12373b953862fe4933ad3b25.stex" ]
-dest_md5="d1ce671c82bafbb123e5b23bc9752869"
+dest_files=[ "res://.import/GrabKey.png-5483d6ed26a2a1887662eae6a317830a.stex" ]
+dest_md5="8753b8fbe1ae1205ca4486c6be437562"
 
 [params]
 

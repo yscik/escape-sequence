@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Movable.png-df7522b9ac906c8e946da4cfe7ee9296.stex"
+path="res://.import/MovableMark.png-e673245064c8b6b51aa7ca4afc6ba3f6.stex"
 
 [deps]
 
-source_file="res://assets/Movable.png"
-source_md5="53c8deb2761598303fd7ca6e9234c5e2"
+source_file="res://ui/MovableMark.png"
+source_md5="37c239dc9482b587561e9aeb202c4f33"
 
-dest_files=[ "res://.import/Movable.png-df7522b9ac906c8e946da4cfe7ee9296.stex" ]
-dest_md5="9a4f872f448e748c0673515e67d1ccdf"
+dest_files=[ "res://.import/MovableMark.png-e673245064c8b6b51aa7ca4afc6ba3f6.stex" ]
+dest_md5="9e4659ea50d4f9fd36545e416a453cfc"
 
 [params]
 
@@ -19,9 +19,9 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
-flags/anisotropic=false
+flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RightKey.png-72a2323e792448ab38d8c16d050a9a03.stex"
+path="res://.import/Movable.png-e2832e45ba5dee30b659992e5c119452.stex"
 
 [deps]
 
-source_file="res://assets/RightKey.png"
-source_md5="c7a58b1094ce1feef182ee31c52d27ba"
+source_file="res://ui/Movable.png"
+source_md5="53c8deb2761598303fd7ca6e9234c5e2"
 
-dest_files=[ "res://.import/RightKey.png-72a2323e792448ab38d8c16d050a9a03.stex" ]
-dest_md5="6d99c54d900a2813eff63f1c05700196"
+dest_files=[ "res://.import/Movable.png-e2832e45ba5dee30b659992e5c119452.stex" ]
+dest_md5="9a4f872f448e748c0673515e67d1ccdf"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
