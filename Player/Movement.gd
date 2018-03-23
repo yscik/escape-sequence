@@ -80,7 +80,7 @@ func platform_exit():
 	flipped = false
 
 func flip():
-	character.scale.x = -1
+	character.apply_scale(Vector2(-1, 1))
 	
 func speed(direction, accel):
 	v[direction] = min(200, abs(v[direction]) + 4) * accel
