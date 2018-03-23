@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/SetSpawn.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/PlatformTest-3.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-spawn = 5
+spawn = 0
 
 [node name="Meta" type="Node" parent="." index="0"]
 
@@ -18,5 +19,9 @@ position = Vector2( 3409.74, -1157.06 )
 [node name="Platform-1" parent="Meta" index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="Platform-3" parent="Meta" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 2518.74, -235.46 )
 
 
