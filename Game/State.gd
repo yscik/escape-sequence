@@ -4,6 +4,8 @@ extends Node
 # var a = 2
 # var b = "textvar"
 
+signal pickup(skill)
+
 export var in_platformer = false
 var player_skills = {
 	right = false,
@@ -18,12 +20,6 @@ var game = null
 
 var checkpoint = null
 
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func pickup(skill):
+	player_skills[skill] = true
+	emit_signal("pickup", skill)

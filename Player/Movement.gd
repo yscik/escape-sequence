@@ -16,9 +16,31 @@ var v = Vector2()
 var GRAVITY = Vector2(0, 10)
 var flipped = false
 
-func update():	
+var input = {
+	left = false,
+	right = false,
+	up = false,
+	down = false,
+}
+var keyMap = {
+	left = [KEY_LEFT, KEY_A],
+	right = [KEY_RIGHT, KEY_D],
+	up = [KEY_UP, KEY_W],
+	down = [KEY_DOWN, KEY_S],
+}
 
+func update_input():
+	for skill in input:
+		set_input(skill, keyMap[skill])
+
+func set_input(skill, keys):
+	input[skill] = skills[skill] && (Input.is_key_pressed(keys[0]) || Input.is_key_pressed(keys[1]))
+	
+func update():	
+	
 	if !enabled: return
+	
+	update_input()
 	
 	if State.in_platformer && !in_platformer:
 		topdown_exit()
@@ -35,12 +57,12 @@ func update():
 		topdown_movement()		
 		topdown_anim()
 		
-	
+
 func platform_movement():
 	
-	if skills.left && Input.is_key_pressed(KEY_LEFT):
+	if input.left:
 		v.x = -200
-	elif skills.right && Input.is_key_pressed(KEY_RIGHT):
+	elif input.right:
 		v.x = 200
 	else:
 		v.x = 0
