@@ -1,4 +1,4 @@
-extends TextureButton
+extends Sprite
 
 # class member variables go here, for example:
 # var a = 2
@@ -16,7 +16,9 @@ func _ready():
 
 
 func click():
-	$EnterKey.set_collision_layer_bit(0, false)
+	
+	$Tween.interpolate_property(self, "rotation", rotation, rotation + deg2rad(90), 0.5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	$Tween.start()
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:

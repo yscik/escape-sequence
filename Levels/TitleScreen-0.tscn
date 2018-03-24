@@ -1,0 +1,208 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/TitleBg.png" type="Texture" id=1]
+[ext_resource path="res://ui/Logo.png" type="Texture" id=2]
+[ext_resource path="res://ui/EscButton.png" type="Texture" id=3]
+[ext_resource path="res://ui/EnterKey.png" type="Texture" id=4]
+[ext_resource path="res://platformer/EnterKey.gd" type="Script" id=5]
+[ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Reveal"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -76.1201, 0 ), Vector2( -76.1201, -337.378 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Reveal"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 88.1738 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.6804, 19.1713 )
+
+[node name="Level-0" type="Node2D"]
+
+position = Vector2( -614.18, -339.731 )
+
+[node name="TitleBg" type="Sprite" parent="." index="0"]
+
+position = Vector2( -76.1201, -337.378 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleBg" index="0"]
+
+root_node = NodePath("..")
+autoplay = "Reveal"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Reveal = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Title" type="Node2D" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node2D" type="Node2D" parent="Title" index="0"]
+
+[node name="TitleImage" type="TextureRect" parent="Title/Node2D" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -590.0
+margin_top = -265.0
+margin_right = 429.0
+margin_bottom = -58.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 4
+_sections_unfolded = [ "Anchor", "BBCode", "Margin", "Mouse", "Size Flags", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title/Node2D" index="1"]
+
+root_node = NodePath("..")
+autoplay = "Reveal"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Reveal = SubResource( 2 )
+blend_times = [  ]
+
+[node name="TitleBody" type="StaticBody2D" parent="Title" index="1"]
+
+position = Vector2( -77.1305, -203.879 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 16
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Title/TitleBody" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -337.158, -21.9532, -216.702, -22.4409, -198.17, -19.5149, -178.663, -22.9286, -164.032, -20.4902, -144.525, -22.9286, -71.3738, -22.9286, -71.3738, 35.1049, -25.7203, 35.9286, -25.1364, -24.8054, 80.7814, -25.8547, 103.215, -22.4409, 123.209, -23.4163, 188.07, -23.904, 222.695, -19.0272, 271.463, -25.3669, 339.25, -25.3669, 339.738, 17.0609, 64.688, 20.4747, 64.9344, 87.657, -78.763, 86.4595, -79.3618, 19.4006, -339.215, 19.4008 )
+
+[node name="EscButton" type="Node2D" parent="." index="2"]
+
+position = Vector2( -549.87, -296.036 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Key" type="Sprite" parent="EscButton" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="EscButton" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_mask = 16
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscButton/Area2D" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EnterKey2" type="Sprite" parent="." index="3"]
+
+position = Vector2( -57.82, 179.731 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Mouse", "Rect", "Textures", "Transform" ]
+
+[node name="EnterKey" type="StaticBody2D" parent="EnterKey2" index="0"]
+
+position = Vector2( -4.7666, -10.7248 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 16
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="EnterKey2/EnterKey" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.5972, -67.0643, 71.9802, -67.219, 72.4559, 91.4123, -25.1033, 91.5526, -24.9113, 22.1482, -64.4395, 22.1482 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tween" type="Tween" parent="EnterKey2" index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="RightKey" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 5.24414, 492.559 )
+skill = "right"
+
+[node name="Checkpoint" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( -79.5227, -74.0356 )
+skill_right = false
+skill_left = false
+skill_up = false
+skill_down = false
+skill_grab = false
+
+

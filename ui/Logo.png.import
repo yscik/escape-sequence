@@ -7,10 +7,10 @@ path="res://.import/Logo.png-a41665f6f3d643c0a72736b711c043c2.stex"
 [deps]
 
 source_file="res://ui/Logo.png"
-source_md5="323169aed8f58a16d4bac44131ce28a2"
+source_md5="fc1931493b4bc1e520ff83765947ef3a"
 
 dest_files=[ "res://.import/Logo.png-a41665f6f3d643c0a72736b711c043c2.stex" ]
-dest_md5="9c5c55e225fe70d4dcd62e9ab868cd46"
+dest_md5="5400b0fdfea6dd33966326d929c62b53"
 
 [params]
 

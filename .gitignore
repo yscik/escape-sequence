@@ -9,4 +9,8 @@ export_presets.cfg
 # System/tool-specific ignores
 .directory
 *~
+
 build
+tmp
+
+.idea

@@ -105,7 +105,7 @@ func flip():
 	character.apply_scale(Vector2(-1, 1))
 	
 func speed(direction, accel):
-	v[direction] = min(200, abs(v[direction]) + 4) * accel
+	v[direction] = min(300, abs(v[direction]) + 10) * accel
 	
 func topdown_movement():
 	
