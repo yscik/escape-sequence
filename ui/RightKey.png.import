@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovableFrame.png-2c00afe2daf4ae7dd9432dc78394b918.stex"
+path="res://.import/RightKey.png-b85356e8ab34e5cc076a033a8c8dda37.stex"
 
 [deps]
 
-source_file="res://assets/MovableFrame.png"
-source_md5="cb0df91daf8ca5b6f32ff2e923a6f500"
+source_file="res://ui/RightKey.png"
+source_md5="c7a58b1094ce1feef182ee31c52d27ba"
 
-dest_files=[ "res://.import/MovableFrame.png-2c00afe2daf4ae7dd9432dc78394b918.stex" ]
-dest_md5="dfac4ee8137db9baba5fafa57154e86a"
+dest_files=[ "res://.import/RightKey.png-b85356e8ab34e5cc076a033a8c8dda37.stex" ]
+dest_md5="6d99c54d900a2813eff63f1c05700196"
 
 [params]
 

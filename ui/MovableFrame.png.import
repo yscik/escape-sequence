@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrabKey.png-3c117ec6291370415aa1f35d7866e566.stex"
+path="res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex"
 
 [deps]
 
-source_file="res://assets/GrabKey.png"
-source_md5="3c62d7cc825bf9510f47a810f4ab1c42"
+source_file="res://ui/MovableFrame.png"
+source_md5="cb0df91daf8ca5b6f32ff2e923a6f500"
 
-dest_files=[ "res://.import/GrabKey.png-3c117ec6291370415aa1f35d7866e566.stex" ]
-dest_md5="8753b8fbe1ae1205ca4486c6be437562"
+dest_files=[ "res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex" ]
+dest_md5="dfac4ee8137db9baba5fafa57154e86a"
 
 [params]
 

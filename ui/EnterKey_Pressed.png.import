@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Logo.png-f4b7c4ba7d9b168635416fce503fab9f.stex"
+path="res://.import/EnterKey_Pressed.png-2675acddd23524ba44ca47f9e21f837e.stex"
 
 [deps]
 
-source_file="res://assets/Logo.png"
-source_md5="323169aed8f58a16d4bac44131ce28a2"
+source_file="res://ui/EnterKey_Pressed.png"
+source_md5="166fb9a84994dba26d35e9307aee1efd"
 
-dest_files=[ "res://.import/Logo.png-f4b7c4ba7d9b168635416fce503fab9f.stex" ]
-dest_md5="9c5c55e225fe70d4dcd62e9ab868cd46"
+dest_files=[ "res://.import/EnterKey_Pressed.png-2675acddd23524ba44ca47f9e21f837e.stex" ]
+dest_md5="cce23e849276e3e23264f2bc2b199141"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

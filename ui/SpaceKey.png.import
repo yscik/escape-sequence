@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UpKey.png-507eb116ed429de2c8635f4f289b2441.stex"
+path="res://.import/SpaceKey.png-d3135a5d2d1255b9618200b4fd15000e.stex"
 
 [deps]
 
-source_file="res://assets/UpKey.png"
-source_md5="c7b505c5eae5a613a494c2c35cfbacb9"
+source_file="res://ui/SpaceKey.png"
+source_md5="10b1b30b935ca0615e660184c0e314b0"
 
-dest_files=[ "res://.import/UpKey.png-507eb116ed429de2c8635f4f289b2441.stex" ]
-dest_md5="1adf490165170a84c900365a5ad58407"
+dest_files=[ "res://.import/SpaceKey.png-d3135a5d2d1255b9618200b4fd15000e.stex" ]
+dest_md5="002cfb65aedc5f8f434706ca408098d6"
 
 [params]
 

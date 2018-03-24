@@ -15,6 +15,13 @@ func _ready():
 #	pass
 
 
+func click():
+	$EnterKey.set_collision_layer_bit(0, false)
+
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		$EnterKey.set_collision_layer_bit(0, false)
+		click()
+
+func _unhandled_key_input(event):
+	if event.pressed && event.scancode == KEY_ENTER:
+		click()

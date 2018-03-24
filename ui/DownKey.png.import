@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MoveKey.png-2ca95528737bd7e6ac33ab74c395f829.stex"
+path="res://.import/DownKey.png-6d1feba831a06af1a9fd3e54120158f8.stex"
 
 [deps]
 
-source_file="res://assets/MoveKey.png"
-source_md5="094b308b4b34ec82f33907577409a4fe"
+source_file="res://ui/DownKey.png"
+source_md5="91628b8c397803cf1801f3f1df967a62"
 
-dest_files=[ "res://.import/MoveKey.png-2ca95528737bd7e6ac33ab74c395f829.stex" ]
-dest_md5="e647ab996b5ed31287ea35932b3d10fe"
+dest_files=[ "res://.import/DownKey.png-6d1feba831a06af1a9fd3e54120158f8.stex" ]
+dest_md5="594260ed0c17c0ad1edfbac979fdb145"
 
 [params]
 
