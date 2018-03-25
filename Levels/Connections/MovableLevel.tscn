@@ -19,12 +19,12 @@ flags = 4
 gradient = SubResource( 1 )
 width = 512
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 316.922, 32.949 )
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=4]
 
 0/name = "Blue"
 0/texture = ExtResource( 7 )
@@ -45,7 +45,7 @@ extents = Vector2( 316.922, 32.949 )
 0/shapes = [  ]
 _sections_unfolded = [ "0" ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.04938, 9.20053 )
@@ -109,11 +109,12 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 289.473, 479.544 )
 scale = Vector2( 1.09821, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Movable" parent="." index="2" instance=ExtResource( 6 )]
 
+visible = false
 margin_left = -72.0
 margin_top = 439.0
 margin_right = 650.0
@@ -123,7 +124,7 @@ _sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Visibili
 [node name="Base" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = SubResource( 3 )
+tile_set = SubResource( 4 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -160,7 +161,7 @@ __meta__ = {
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PowerOut" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PowerIn" type="Area2D" parent="." index="5"]
@@ -183,7 +184,7 @@ __meta__ = {
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="PowerIn" index="0"]
 
 position = Vector2( 0.179626, 2.70181 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="PowerIn" to="Platformer" method="on_connect"]

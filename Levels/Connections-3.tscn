@@ -20,7 +20,7 @@ position = Vector2( 192, 640 )
 
 [node name="ML-1" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -703, 672 )
+position = Vector2( -704, 704 )
 
 [node name="WallDoor2" parent="ML-1/Platformer" index="1"]
 
@@ -41,7 +41,7 @@ position = Vector2( 576, 576 )
 
 [node name="PowerOut" type="Area2D" parent="." index="3"]
 
-position = Vector2( -736, 1152 )
+position = Vector2( -736, 1185 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
