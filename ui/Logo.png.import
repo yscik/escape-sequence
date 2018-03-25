@@ -7,10 +7,10 @@ path="res://.import/Logo.png-a41665f6f3d643c0a72736b711c043c2.stex"
 [deps]
 
 source_file="res://ui/Logo.png"
-source_md5="323169aed8f58a16d4bac44131ce28a2"
+source_md5="fc1931493b4bc1e520ff83765947ef3a"
 
 dest_files=[ "res://.import/Logo.png-a41665f6f3d643c0a72736b711c043c2.stex" ]
-dest_md5="9c5c55e225fe70d4dcd62e9ab868cd46"
+dest_md5="5468614e1c08c0e70bdce29f1c023b1e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

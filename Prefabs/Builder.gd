@@ -23,21 +23,23 @@ func build_block(pos):
 	i += 1
 	
 	if(!block): 
-		tween("move_to", current_pos, global_position)
+		#tween("move_to", current_pos, global_position)
 		return
-
-	print("starting %s" % block.name)
 	
+	print("starting %s" % block.name)
+
+	block.raise()
+		
 	tween("move_to", current_pos, block.global_position)
 	yield($Tween, "tween_completed")
-	$Tween.stop(self, "move_to")
 
 	moved_block = block
 	update_moved_block()
 
+	print("picked up %s" % block.name)
+
 	tween("move_to", current_pos, pos)	
 	yield($Tween, "tween_completed")
-	$Tween.stop(self, "move_to")
 	
 	moved_block = null
 
@@ -49,10 +51,15 @@ func build_block(pos):
 	pass
 
 func move_to(pos):
-	$ArmRot.look_at(pos)
-	var length = (global_position - pos).length()
-	$ArmRot/Arm.rect_size.y = length
+	
+	if !$Cursor.working:
+		$Tween.stop(self)
+		moved_block = null
+#	$ArmRot.look_at(pos)
+#	var length = (global_position - pos).length()
+#	$ArmRot/Arm.rect_size.y = length
 	current_pos = pos
+	$Cursor.global_position = pos
 	update_moved_block()
 	
 func update_moved_block():

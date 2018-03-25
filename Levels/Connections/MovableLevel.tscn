@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Prefabs/MovableSnap.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Connections/Platformer.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Platformer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Connections/WallDoor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://platformer/Tile02A.tres" type="TileSet" id=5]
+[ext_resource path="res://Prefabs/Movable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://platformer/tiles/tile03.png" type="Texture" id=7]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 512
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 316.922, 32.949 )
+
+[sub_resource type="TileSet" id=4]
+
+0/name = "Blue"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 256 )
+0/is_autotile = true
+0/autotile/bitmask_mode = 0
+0/autotile/icon_coordinate = Vector2( 1, 1 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 1 ), 325, Vector2( 1, 1 ), 325, Vector2( 2, 1 ), 325, Vector2( 3, 1 ), 325 ]
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+_sections_unfolded = [ "0" ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.04938, 9.20053 )
+
+[node name="MovableLevel" type="StaticBody2D"]
+
+input_pickable = true
+collision_layer = 4
+collision_mask = 16
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="Platformer" type="Node2D" parent="." index="0"]
+
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+powered = false
+
+[node name="Platformer" parent="Platformer" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 0 )
+scale = Vector2( 0.554676, 0.7 )
+texture = SubResource( 2 )
+
+[node name="WallDoor2" parent="Platformer" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 576, 256 )
+
+[node name="WallDoor3" parent="Platformer" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 0, 128 )
+
+[node name="TileMap" type="TileMap" parent="Platformer" index="3" groups=[
+"Physics",
+]]
+
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 16
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 6, 1, 0, 196609, 2, 0, 262145, 3, 0, 262145, 4, 0, 196609, 5, 0, 196609, 6, 0, 262145, 7, 0, 262145, 8, 0, 262145, 9, 0, 7, 65536, 0, 131077, 65545, 0, 65541, 131081, 0, 65541, 196612, 0, 196608, 196613, 0, 131076, 196614, 0, 196610, 196617, 0, 131077, 262144, 0, 6, 262145, 0, 196610, 262149, 0, 131077, 327680, 0, 65541, 393216, 0, 65542, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196610 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 289.473, 479.544 )
+scale = Vector2( 1.09821, 1 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Movable" parent="." index="2" instance=ExtResource( 6 )]
+
+visible = false
+margin_left = -72.0
+margin_top = 439.0
+margin_right = 650.0
+margin_bottom = 519.0
+_sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Visibility" ]
+
+[node name="Base" type="TileMap" parent="." index="3"]
+
+mode = 0
+tile_set = SubResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 16
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 524287, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="PowerOut" type="Area2D" parent="." index="4"]
+
+position = Vector2( 608.101, 479.042 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 64
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PowerOut" index="0"]
+
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerIn" type="Area2D" parent="." index="5"]
+
+position = Vector2( -32.051, 478.427 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 64
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PowerIn" index="0"]
+
+position = Vector2( 0.179626, 2.70181 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="PowerIn" to="Platformer" method="on_connect"]
+
+[connection signal="area_exited" from="PowerIn" to="Platformer" method="on_disconnect"]
+
+

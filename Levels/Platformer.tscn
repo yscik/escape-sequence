@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Levels/Platformer.gd" type="Script" id=1]
+[ext_resource path="res://Levels/PlatformerArea.gd" type="Script" id=1]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=5]
 
 offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=2]
+[sub_resource type="GradientTexture" id=6]
 
 flags = 4
-gradient = SubResource( 1 )
+gradient = SubResource( 5 )
 width = 512
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.1259, 31.8523 )
@@ -28,7 +28,7 @@ color = Color( 0.953125, 0.930786, 0.930786, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
-texture = SubResource( 2 )
+texture = SubResource( 6 )
 texture_offset = Vector2( 0, 0 )
 texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = -90.0
@@ -36,7 +36,9 @@ invert_enable = false
 invert_border = 100.0
 _sections_unfolded = [ "Material", "Texture", "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+[node name="AreaMode" type="Area2D" parent="." index="0" groups=[
+"Physics",
+]]
 
 position = Vector2( 575.33, 320.778 )
 scale = Vector2( 17.9775, 10.0516 )
@@ -45,7 +47,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 0
+collision_layer = 8
 collision_mask = 16
 audio_bus_override = false
 audio_bus_name = "Master"
@@ -55,14 +57,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMode" index="0"]
 
 position = Vector2( 0, -0.0645599 )
 scale = Vector2( 1, 0.998148 )
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="player_enter"]
+[connection signal="body_entered" from="AreaMode" to="AreaMode" method="player_enter"]
 
-[connection signal="body_exited" from="Area2D" to="Area2D" method="player_exit"]
+[connection signal="body_exited" from="AreaMode" to="AreaMode" method="player_exit"]
 
 

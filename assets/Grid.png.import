@@ -7,10 +7,10 @@ path="res://.import/Grid.png-15cce8dda2297c7230652415b59bf857.stex"
 [deps]
 
 source_file="res://assets/Grid.png"
-source_md5="b1882d44eaae2d7603ca36ba963bc294"
+source_md5="3e3a20df05a15c62cc250aec4a347955"
 
 dest_files=[ "res://.import/Grid.png-15cce8dda2297c7230652415b59bf857.stex" ]
-dest_md5="4023663fd9f7f00a148252e7c45b5892"
+dest_md5="61083ae625e3aaf21b3a915526e174bd"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

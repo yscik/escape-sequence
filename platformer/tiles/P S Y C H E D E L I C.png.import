@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/P S Y C H E D E L I C.png-9c0caa49b6fe9f0444921a57f190d347.stex"
+
+[deps]
+
+source_file="res://platformer/tiles/P S Y C H E D E L I C.png"
+source_md5="dc910900b14fe99e7e0a38e0df34ea61"
+
+dest_files=[ "res://.import/P S Y C H E D E L I C.png-9c0caa49b6fe9f0444921a57f190d347.stex" ]
+dest_md5="5d4a865d90dd0d22424cdc02a2699f45"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
