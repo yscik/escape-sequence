@@ -10,7 +10,7 @@ source_file="res://assets/crane_machine.png"
 source_md5="d4c353c784d02b2024b2c402e158905d"
 
 dest_files=[ "res://.import/crane_machine.png-a0004d3b50b994c00aa3f3852a598536.stex" ]
-dest_md5="82442d5d6151ce2bc6a87d94715dbb8d"
+dest_md5="12845de4bcc51e52633d2a7d22933a2a"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

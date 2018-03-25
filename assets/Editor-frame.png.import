@@ -10,7 +10,7 @@ source_file="res://assets/Editor-frame.png"
 source_md5="41daa72fb7205df3b883b0ba43020f2a"
 
 dest_files=[ "res://.import/Editor-frame.png-c93529aca616afcef08f8cadbaa8187a.stex" ]
-dest_md5="525801a17c8f4466755d244c9fec4845"
+dest_md5="de4b2024d0593d917ffcc069c75d154f"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

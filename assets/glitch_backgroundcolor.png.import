@@ -10,7 +10,7 @@ source_file="res://assets/glitch_backgroundcolor.png"
 source_md5="58f23a1949cc385d7342d5375c7bee6e"
 
 dest_files=[ "res://.import/glitch_backgroundcolor.png-55996ad8bbe23ca939807eb5d1c07933.stex" ]
-dest_md5="152f46c5b247c27d1e44808c5d2c7c80"
+dest_md5="2cc3c6f5441764223c5ce708ec7589ad"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -10,7 +10,7 @@ source_file="res://ui/EscButton.png"
 source_md5="fb0dcf553b6e5d0ca33c2059b7ae5326"
 
 dest_files=[ "res://.import/EscButton.png-9c82702dd6fe290e986343e8b3f9f3b4.stex" ]
-dest_md5="dc6127d329df9013cf36f87055fc7247"
+dest_md5="f103458e8a92cdede0d11ce2f9514356"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

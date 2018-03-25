@@ -10,7 +10,7 @@ source_file="res://platformer/tiles/bluetiles3.png"
 source_md5="e15db0462c23cf0226465d37ec6193be"
 
 dest_files=[ "res://.import/bluetiles3.png-c7b9bd53226ac01fdd6ea8f57f8406cf.stex" ]
-dest_md5="0807dd8f0a059e1c3b90da52073b2af2"
+dest_md5="ede1c41aa23b3a1552833157d2fd3ee6"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

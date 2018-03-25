@@ -10,7 +10,7 @@ source_file="res://platformer/tiles/P S Y C H E D E L I C.png"
 source_md5="dc910900b14fe99e7e0a38e0df34ea61"
 
 dest_files=[ "res://.import/P S Y C H E D E L I C.png-9c0caa49b6fe9f0444921a57f190d347.stex" ]
-dest_md5="ad6d3a20f8374810be6d5b6f6daa6e38"
+dest_md5="5d4a865d90dd0d22424cdc02a2699f45"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

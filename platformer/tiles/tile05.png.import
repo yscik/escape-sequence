@@ -10,7 +10,7 @@ source_file="res://platformer/tiles/tile05.png"
 source_md5="92bea1665c6f0f4292a789a659f09342"
 
 dest_files=[ "res://.import/tile05.png-919119fc3a27bb5f62c5fa54f2393823.stex" ]
-dest_md5="86e8519bd294cc3b7eb59b74d0e3f278"
+dest_md5="560a0d1cfbe4ffef2ddfaa23461897bd"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

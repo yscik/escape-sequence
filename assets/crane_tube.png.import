@@ -10,7 +10,7 @@ source_file="res://assets/crane_tube.png"
 source_md5="f86a7ad9fb9f5bfc9b6a21e283a2971f"
 
 dest_files=[ "res://.import/crane_tube.png-5bd756408460f99e1659687b407765b6.stex" ]
-dest_md5="545dad56e514c8367de19dcf3dd9b045"
+dest_md5="21883aa443d756c673666cb0b34fa2a7"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

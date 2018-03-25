@@ -10,7 +10,7 @@ source_file="res://assets/mouse_pointer.png"
 source_md5="419fe8421d730163599c2b35ece0c8b3"
 
 dest_files=[ "res://.import/mouse_pointer.png-1b68aa641ea5600da1a94e55b2980235.stex" ]
-dest_md5="e2e2cf06142e0df98627853be728ef1b"
+dest_md5="653cceb1510e496346a29e7f8e361c25"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -10,7 +10,7 @@ source_file="res://assets/glitch_blue.png"
 source_md5="af39907e8a83407b9d0305bc35e51645"
 
 dest_files=[ "res://.import/glitch_blue.png-689ef412e241180de76ba79c9cfa0d2f.stex" ]
-dest_md5="de5f8c91dec116731f13e3745ffb07cd"
+dest_md5="62451d1b49fc197cf529bc9d494f16fa"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
