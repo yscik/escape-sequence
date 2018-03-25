@@ -53,3 +53,11 @@ func zoom_camera(scale):
 		Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	$Camera2D/Tween.start()
 	pass
+
+func can_see_movable(movable):
+	if skills.grab:
+		movable.seen(true)
+
+func cant_see_movable(movable):
+	if skills.grab:
+		movable.seen(false)

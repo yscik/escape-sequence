@@ -41,4 +41,9 @@ func get_map():
 		if map:
 			return map
 		node = node.get_parent()
+		
+		
+func seen(on):
+	find_node("Movable").visible = on
+
 	
