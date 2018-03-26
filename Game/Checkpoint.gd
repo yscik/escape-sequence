@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 export var skill_right = true
 export var skill_left = true

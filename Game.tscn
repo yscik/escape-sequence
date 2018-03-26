@@ -10,7 +10,7 @@
 [node name="Game" type="Node"]
 
 script = ExtResource( 1 )
-spawn = 0
+spawn = 3
 
 [node name="Background" parent="." index="0" instance=ExtResource( 2 )]
 
