@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Checkpoint.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Platformer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://platformer/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=4]
+
+[node name="Area-4" type="Node2D" index="0"]
+
+[node name="Spawn" type="Node2D" parent="." index="0"]
+
+position = Vector2( 3360, 1504 )
+script = ExtResource( 1 )
+skill_right = true
+skill_left = true
+skill_up = true
+skill_down = true
+skill_grab = true
+
+[node name="Platformer" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 16
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1638447, 0, 196608, 1638448, 0, 196609, 1638449, 0, 196609, 1638450, 0, 196609, 1638451, 0, 196609, 1638452, 0, 196609, 1638453, 0, 196609, 1638454, 0, 196610, 1703942, 0, 196613, 1703948, 0, 196613, 1769472, 1, 65536, 1769473, 1, 65536, 1769474, 1, 65536, 1769475, 1, 65536, 1769476, 1, 65536, 1769477, 1, 65536, 1769478, 1, 65536, 1769484, 1, 65536, 1769485, 1, 65536, 1769486, 1, 65536, 1769487, 1, 65536, 1769488, 1, 65536, 1769489, 1, 65536, 1769490, 1, 65536, 1769491, 1, 65536, 1769492, 1, 65536, 1769493, 1, 65536, 1769494, 1, 65536, 1769495, 1, 65536, 1769496, 1, 65536, 1769497, 1, 65536, 1769498, 1, 65536, 1769499, 1, 65536, 1769500, 1, 65536, 1769501, 1, 65536, 1769502, 1, 65536, 1769503, 1, 65536, 1769504, 1, 65536, 1769505, 1, 65536, 1769506, 1, 65536, 1769507, 1, 65536, 1769508, 1, 65536, 1769509, 1, 65536, 1769510, 1, 65536, 1769511, 1, 65536, 1769512, 1, 65536, 1769513, 1, 65536, 1769514, 1, 65536, 1769515, 1, 65536, 1769516, 1, 65536, 1769517, 1, 65536, 1769518, 1, 65536, 1769519, 1, 65536, 1769520, 1, 65536, 1769521, 1, 65536, 1769522, 1, 65536, 1769523, 1, 65536, 1769524, 1, 65536, 1769525, 1, 65536, 1769526, 1, 65536 )
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Z Index" ]
+
+[node name="Tile" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 3040, 1568 )
+
+

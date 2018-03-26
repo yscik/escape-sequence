@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/SetSpawn.gd" type="Script" id=1]
 [ext_resource path="res://Levels/EditorFrame.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Connections-3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Area-4.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node"]
 
@@ -29,6 +30,10 @@ editor/display_folded = true
 position = Vector2( 3008, -1408 )
 
 [node name="UI" parent="." index="2" instance=ExtResource( 6 )]
+
+[node name="Area-4" parent="." index="3" instance=ExtResource( 7 )]
+
+position = Vector2( -1344, -2816 )
 
 
 [editable path="Meta/Connections-3"]
