@@ -67,6 +67,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 powered = false
+activated = true
 
 [node name="Platformer" parent="Platformer" index="0" instance=ExtResource( 3 )]
 
@@ -99,7 +100,7 @@ collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
-collision_mask = 16
+collision_mask = 17
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 0, 6, 1, 0, 196609, 2, 0, 262145, 3, 0, 262145, 4, 0, 196609, 5, 0, 196609, 6, 0, 262145, 7, 0, 262145, 8, 0, 262145, 9, 0, 7, 65536, 0, 131077, 65545, 0, 65541, 131081, 0, 65541, 196612, 0, 196608, 196613, 0, 131076, 196614, 0, 196610, 196617, 0, 131077, 262144, 0, 6, 262145, 0, 196610, 262149, 0, 131077, 327680, 0, 65541, 393216, 0, 65542, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196610 )
@@ -114,12 +115,10 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Movable" parent="." index="2" instance=ExtResource( 6 )]
 
-visible = false
 margin_left = -72.0
 margin_top = 439.0
-margin_right = 650.0
+margin_right = 583.0
 margin_bottom = 519.0
-_sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Visibility" ]
 
 [node name="Base" type="TileMap" parent="." index="3"]
 

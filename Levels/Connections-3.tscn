@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Connections/MovableLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/MovableKey.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,6 +19,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-8" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 192, 640 )
+skill_convert = false
 
 [node name="ML-1" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -36,7 +39,6 @@ tile_data = PoolIntArray( 0, 0, 6, 1, 0, 196609, 2, 0, 262145, 3, 0, 262145, 4, 
 
 [node name="ML-2" parent="." index="2" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 576, 576 )
 
 [node name="PowerOut" type="Area2D" parent="." index="3"]
@@ -63,7 +65,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ML-3" parent="." index="4" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 192, -320 )
 
 [node name="WallDoor3" parent="ML-3/Platformer" index="2"]
@@ -74,7 +75,17 @@ position = Vector2( 0, 256 )
 
 tile_data = PoolIntArray( 0, 0, 1, 1, 0, 9, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 196609, 7, 0, 196609, 8, 0, 196609, 9, 0, 7, 65536, 0, 131073, 65537, 0, 131074, 65545, 0, 65541, 131072, 0, 65546, 131073, 0, 65547, 131074, 0, 10, 131075, 0, 9, 131076, 0, 196609, 131077, 0, 196609, 131078, 0, 7, 131081, 0, 65541, 196608, 0, 131077, 196610, 0, 65537, 196611, 0, 65545, 196614, 0, 65541, 196617, 0, 131077, 262147, 0, 65541, 262150, 0, 8, 262151, 0, 2, 327683, 0, 65541, 327685, 0, 1, 327686, 0, 65540, 327687, 0, 131074, 393216, 0, 196608, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196611, 393220, 0, 196609, 393221, 0, 65544, 393222, 0, 131072, 393223, 0, 65547, 393224, 0, 196609, 393225, 0, 196610 )
 
+[node name="Pickup" parent="ML-3" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 256 )
+skill = "convert"
+
+[node name="Key" parent="ML-3/Pickup" index="0"]
+
+texture = ExtResource( 4 )
+
 
 [editable path="ML-1"]
 [editable path="ML-2"]
 [editable path="ML-3"]
+[editable path="ML-3/Pickup"]
