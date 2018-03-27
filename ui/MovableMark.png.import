@@ -7,10 +7,10 @@ path="res://.import/MovableMark.png-e673245064c8b6b51aa7ca4afc6ba3f6.stex"
 [deps]
 
 source_file="res://ui/MovableMark.png"
-source_md5="37c239dc9482b587561e9aeb202c4f33"
+source_md5="8bb92a46df46b6562437ea75333852c0"
 
 dest_files=[ "res://.import/MovableMark.png-e673245064c8b6b51aa7ca4afc6ba3f6.stex" ]
-dest_md5="e1f89b4db9a77672fb4e9452c7746f8f"
+dest_md5="35a9fde4c567e5be34cb0502dcb5500e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
