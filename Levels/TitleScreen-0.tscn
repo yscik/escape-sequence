@@ -3,8 +3,8 @@
 [ext_resource path="res://ui/TitleBg.png" type="Texture" id=1]
 [ext_resource path="res://ui/Logo.png" type="Texture" id=2]
 [ext_resource path="res://ui/EscButton.png" type="Texture" id=3]
-[ext_resource path="res://ui/EnterKey.png" type="Texture" id=4]
-[ext_resource path="res://platformer/EnterKey.gd" type="Script" id=5]
+[ext_resource path="res://platformer/EnterKey.gd" type="Script" id=4]
+[ext_resource path="res://ui/EnterKey.png" type="Texture" id=5]
 [ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/HintWin.png" type="Texture" id=8]
@@ -159,32 +159,20 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Transform" ]
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EnterKey2" type="Sprite" parent="." index="3"]
+[node name="EnterKey" type="StaticBody2D" parent="." index="3"]
 
-position = Vector2( -57.82, 179.731 )
-texture = ExtResource( 4 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Mouse", "Rect", "Textures", "Transform" ]
-
-[node name="EnterKey" type="StaticBody2D" parent="EnterKey2" index="0"]
-
-position = Vector2( -4.7666, -10.7248 )
-input_pickable = false
+position = Vector2( -62.5866, 169.006 )
+input_pickable = true
 collision_layer = 1
 collision_mask = 16
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+script = ExtResource( 4 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="EnterKey2/EnterKey" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -64.5972, -67.0643, 71.9802, -67.219, 72.4559, 91.4123, -25.1033, 91.5526, -24.9113, 22.1482, -64.4395, 22.1482 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Tween" type="Tween" parent="EnterKey2" index="1"]
+[node name="Tween" type="Tween" parent="EnterKey" index="0"]
 
 repeat = false
 playback_process_mode = 1
@@ -192,6 +180,18 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Sprite" type="Sprite" parent="EnterKey" index="1"]
+
+position = Vector2( 4.7666, 10.7248 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Mouse", "Rect", "Textures", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="EnterKey" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.5972, -67.0643, 71.9802, -67.219, 72.4559, 91.4123, -25.1033, 91.5526, -24.9113, 22.1482, -64.4395, 22.1482 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="RightKey" parent="." index="4" instance=ExtResource( 6 )]
 

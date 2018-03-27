@@ -252,7 +252,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -45.625 ), Vector2( 0, 50 ), Vector2( 0, -120 ), Vector2( 0, -45.625 ) ]
 }
 
-[node name="Area-1" type="Node2D" index="0"]
+[node name="Area-1" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -540,6 +540,8 @@ skill_down = false
 skill_convert = false
 
 [node name="Tile" parent="Level-4" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 365.184, 352.27 )
 
 [node name="Tile4" parent="Level-4" index="2" instance=ExtResource( 12 )]
 

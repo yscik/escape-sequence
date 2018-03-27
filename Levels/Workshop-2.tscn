@@ -35,7 +35,7 @@ flags = 4
 gradient = SubResource( 2 )
 width = 512
 
-[node name="Workshop-2" type="Node2D"]
+[node name="Workshop-2" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -121,6 +121,7 @@ __meta__ = {
 
 [node name="BuildOrder" type="TileMap" parent="Platform-Assembling/Level/TileMap" index="0"]
 
+visible = false
 mode = 0
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 64, 64 )
@@ -262,7 +263,7 @@ position = Vector2( -544, -672 )
 
 [node name="Door2" parent="Platform-Assembling" index="4" instance=ExtResource( 17 )]
 
-position = Vector2( -416, -544 )
+position = Vector2( -416, -1376 )
 
 [connection signal="body_entered" from="StartTrigger" to="Platform-Assembling" method="start" flags=6]
 
