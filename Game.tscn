@@ -2,38 +2,38 @@
 
 [ext_resource path="res://Game/SetSpawn.gd" type="Script" id=1]
 [ext_resource path="res://Levels/EditorFrame.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Connections-3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Area-4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Area-4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=7]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-spawn = 3
+spawn = 0
 
 [node name="Background" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="Meta" type="Node" parent="." index="1"]
 
-[node name="Workshop-2" parent="Meta" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 2199.45, -3048.44 )
-
-[node name="Area-1" parent="Meta" index="1" instance=ExtResource( 4 )]
+[node name="Area-1" parent="Meta" index="0" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="Workshop-2" parent="Meta" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 2199.45, -3048.44 )
 
 [node name="Connections-3" parent="Meta" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 3008, -1408 )
 
-[node name="UI" parent="." index="2" instance=ExtResource( 6 )]
+[node name="Area-4" parent="Meta" index="3" instance=ExtResource( 6 )]
 
-[node name="Area-4" parent="." index="3" instance=ExtResource( 7 )]
+position = Vector2( -1472, -2880 )
 
-position = Vector2( -1344, -2816 )
+[node name="UI" parent="." index="2" instance=ExtResource( 7 )]
 
 
 [editable path="Meta/Connections-3"]

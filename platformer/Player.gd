@@ -9,7 +9,8 @@ func _ready():
 	State.player = self
 	skills = State.player_skills
 	movement = load("res://Player/Movement.gd").new(self)
-	pass
+	State.connect("pickup", self, "pickup")
+	grab = $Character/Grab
 
 func _physics_process(delta):
 	
@@ -61,3 +62,10 @@ func can_see_movable(movable):
 func cant_see_movable(movable):
 	if skills.grab:
 		movable.seen(false)
+
+
+func pickup(skill):
+	match skill:
+		"grab":
+			$Proximity.set_collision_mask_bit(2, true)
+	

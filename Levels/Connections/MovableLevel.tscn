@@ -67,6 +67,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 powered = false
+activated = true
 
 [node name="Platformer" parent="Platformer" index="0" instance=ExtResource( 3 )]
 
@@ -89,7 +90,7 @@ position = Vector2( 0, 128 )
 mode = 0
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
+cell_quadrant_size = 1
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
@@ -99,11 +100,11 @@ collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
-collision_mask = 16
+collision_mask = 17
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 0, 6, 1, 0, 196609, 2, 0, 262145, 3, 0, 262145, 4, 0, 196609, 5, 0, 196609, 6, 0, 262145, 7, 0, 262145, 8, 0, 262145, 9, 0, 7, 65536, 0, 131077, 65545, 0, 65541, 131081, 0, 65541, 196612, 0, 196608, 196613, 0, 131076, 196614, 0, 196610, 196617, 0, 131077, 262144, 0, 6, 262145, 0, 196610, 262149, 0, 131077, 327680, 0, 65541, 393216, 0, 65542, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196610 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -114,19 +115,17 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Movable" parent="." index="2" instance=ExtResource( 6 )]
 
-visible = false
 margin_left = -72.0
 margin_top = 439.0
-margin_right = 650.0
+margin_right = 583.0
 margin_bottom = 519.0
-_sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Visibility" ]
 
 [node name="Base" type="TileMap" parent="." index="3"]
 
 mode = 0
 tile_set = SubResource( 4 )
 cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
+cell_quadrant_size = 1
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
@@ -140,7 +139,7 @@ collision_mask = 16
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 524287, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537 )
-_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Visibility" ]
 
 [node name="PowerOut" type="Area2D" parent="." index="4"]
 

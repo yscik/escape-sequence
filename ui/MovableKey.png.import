@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex"
+path="res://.import/MovableKey.png-c3cfdeab5bbc2eaa43409a3d47e3c4bd.stex"
 
 [deps]
 
-source_file="res://ui/MovableFrame.png"
-source_md5="cb0df91daf8ca5b6f32ff2e923a6f500"
+source_file="res://ui/MovableKey.png"
+source_md5="4f2d7059d1fffbb659b5d171120176ab"
 
-dest_files=[ "res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex" ]
-dest_md5="6efb5368b27f9bffa7d77e7b58ddcfd2"
+dest_files=[ "res://.import/MovableKey.png-c3cfdeab5bbc2eaa43409a3d47e3c4bd.stex" ]
+dest_md5="9c690a0b5263a087d04dd43498e44d18"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

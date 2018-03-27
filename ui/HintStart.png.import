@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex"
+path="res://.import/HintStart.png-e340c58ab44919cd86dba7d6db3bcec3.stex"
 
 [deps]
 
-source_file="res://ui/MovableFrame.png"
-source_md5="cb0df91daf8ca5b6f32ff2e923a6f500"
+source_file="res://ui/HintStart.png"
+source_md5="c06cba34e9b8f6e5c2a84bc92fd85899"
 
-dest_files=[ "res://.import/MovableFrame.png-771f580ee2a143d09fa881fadc84d21f.stex" ]
-dest_md5="6efb5368b27f9bffa7d77e7b58ddcfd2"
+dest_files=[ "res://.import/HintStart.png-e340c58ab44919cd86dba7d6db3bcec3.stex" ]
+dest_md5="e85c1c6faca7d96b5e91b8a48784b993"
 
 [params]
 

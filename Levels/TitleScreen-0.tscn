@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ui/TitleBg.png" type="Texture" id=1]
 [ext_resource path="res://ui/Logo.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://platformer/EnterKey.gd" type="Script" id=5]
 [ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/HintWin.png" type="Texture" id=8]
+[ext_resource path="res://ui/HintStart.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -199,10 +201,22 @@ skill = "right"
 [node name="Checkpoint" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( -79.5227, -74.0356 )
+spawn = true
 skill_right = false
 skill_left = false
 skill_up = false
 skill_down = false
 skill_grab = false
+skill_convert = false
+
+[node name="HintWin" type="Sprite" parent="." index="6"]
+
+position = Vector2( -470.677, -139.63 )
+texture = ExtResource( 8 )
+
+[node name="HintStart" type="Sprite" parent="." index="7"]
+
+position = Vector2( -323.348, 169.761 )
+texture = ExtResource( 9 )
 
 

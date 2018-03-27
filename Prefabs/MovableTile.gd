@@ -1,4 +1,4 @@
-extends CollisionObject2D
+extends "res://Prefabs/Movable.gd"
 
 var OFFSET = Vector2(32,32)
 export var tile = -1
@@ -24,7 +24,7 @@ func change_map(value):
 	
 	var tilemap = get_map()
 	
-	var pos = tilemap.world_to_map(global_position - tilemap.global_position)
+	var pos = tilemap.world_to_map(tilemap.to_local(global_position))
 	var prev = tilemap.get_cellv(pos)
 	
 	global_position = tilemap.map_to_world(pos) + tilemap.global_position + OFFSET
@@ -42,8 +42,7 @@ func get_map():
 			return map
 		node = node.get_parent()
 		
-		
-func seen(on):
-	find_node("Movable").visible = on
+
+	
 
 	

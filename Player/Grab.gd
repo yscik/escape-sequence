@@ -14,22 +14,33 @@ func _unhandled_key_input(event):
 	
 func _process(delta):
 	if grabbed:
-		grabbed.global_position = global_position + grab_offset
+		if grabbed.offset:
+			grabbed.global_position = State.player.global_position  + grab_offset
+		else:
+			grabbed.global_position = global_position
 	
 func grab():
 	grabbed = target
-	grab_offset = grabbed.global_position - global_position 
+	grabbed.grabbed = true
+	
+	if grabbed.offset:
+		grab_offset = grabbed.global_position - State.player.global_position
+		
 	grabbed.off()
 	grabbed.set_collision_mask_bit(4, false)
 
 func drop():
 	grabbed.on()
+	grabbed.grabbed = false
 	grabbed.set_collision_mask_bit(4, true)
 	grabbed = null
 
-func can_grab(area):
-	target = area
+func can_grab(movable):
+	target = movable
+	movable.in_grab_range(true)
+	
 
-func cant_grab(area):
+func cant_grab(movable):
+	movable.in_grab_range(false)
 	target = null
 
