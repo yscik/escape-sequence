@@ -4,7 +4,7 @@
 [ext_resource path="res://Prefabs/Movable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://platformer/tiles/02.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31.6766, 32.949 )
@@ -27,17 +27,15 @@ on = true
 
 [node name="Movable" parent="." index="0" instance=ExtResource( 2 )]
 
-visible = false
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 40.0
 margin_bottom = 40.0
-_sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0, 0.358521 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 

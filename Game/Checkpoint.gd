@@ -5,6 +5,7 @@ export var skill_left = true
 export var skill_up = true
 export var skill_down = true
 export var skill_grab = true
+export var skill_convert = false
 
 func _ready():
 	if !State.checkpoint: 
@@ -18,6 +19,7 @@ func spawn_player():
 	State.player.spawn(global_position)
 	
 	for skill in State.player_skills:
-		State.player_skills[skill] = self["skill_"+skill]
+		if self["skill_"+skill]: 
+			State.pickup(skill)
 		
 	pass

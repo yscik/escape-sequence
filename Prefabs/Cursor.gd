@@ -1,14 +1,8 @@
-extends Node2D
+extends "res://Prefabs/Movable.gd"
 
 var working = true
 
-func _ready():
-	
-	pass
 
-func on():
-	pass
-	
 func off():
 	working = false
 	pass
