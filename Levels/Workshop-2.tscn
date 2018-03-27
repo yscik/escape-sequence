@@ -35,7 +35,7 @@ flags = 4
 gradient = SubResource( 2 )
 width = 512
 
-[node name="Workshop-2" type="Node2D" index="0"]
+[node name="Workshop-2" type="Node2D"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -47,6 +47,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-7" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -514.769, -91.3068 )
+spawn = true
 skill_down = false
 skill_convert = false
 

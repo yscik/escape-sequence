@@ -201,6 +201,7 @@ skill = "right"
 [node name="Checkpoint" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( -79.5227, -74.0356 )
+spawn = true
 skill_right = false
 skill_left = false
 skill_up = false

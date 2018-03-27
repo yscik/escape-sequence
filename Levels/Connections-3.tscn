@@ -19,6 +19,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-8" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 192, 640 )
+spawn = true
 skill_convert = false
 
 [node name="ML-1" parent="." index="1" instance=ExtResource( 2 )]

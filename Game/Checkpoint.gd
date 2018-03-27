@@ -1,5 +1,7 @@
 extends Node2D
 
+export var spawn = true
+
 export var skill_right = true
 export var skill_left = true
 export var skill_up = true
@@ -8,7 +10,7 @@ export var skill_grab = true
 export var skill_convert = false
 
 func _ready():
-	if !State.checkpoint: 
+	if spawn && !State.checkpoint: 
 		spawn_player()
 
 func set_spawn(body):
