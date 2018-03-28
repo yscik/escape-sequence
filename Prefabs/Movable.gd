@@ -6,10 +6,13 @@ var offset = null
 var anim
 func _ready():
 	anim = $Movable/Animation
+
 func on():
+	grabbed = false
 	pass
 
 func off():
+	grabbed = true
 	pass
 
 func seen(on):

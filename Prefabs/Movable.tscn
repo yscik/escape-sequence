@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Movable" type="NinePatchRect" index="0"]
+[node name="Movable" type="NinePatchRect"]
 
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0

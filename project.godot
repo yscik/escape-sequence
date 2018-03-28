@@ -32,6 +32,7 @@ window/stretch/aspect="expand"
 2d_physics/layer_3="movable"
 2d_physics/layer_4="area"
 2d_physics/layer_5="player"
+2d_physics/layer_6="click"
 2d_physics/layer_7="power"
 
 [rendering]

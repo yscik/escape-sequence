@@ -80,4 +80,12 @@ func click_add_tiles(pos):
 	
 	pass
 	
+var manual_count = 0
+func manual_add_tiles():
+	var tiles = tiles_scene.instance()
+	tiles.position.x = manual_count * 140
+	manual_count += 1
+	add_child(tiles)
+	
+	
 	

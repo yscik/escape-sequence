@@ -12,7 +12,7 @@ func _ready():
 	if(on): on()
 
 func off():
-	grabbed = true
+	.off()
 	if content != null: 
 		change_map(content)
 	if hideSprite:
@@ -23,7 +23,7 @@ func off():
 
 func on():
 	content = change_map(tile)
-	grabbed = false
+	.on()
 	if hideSprite:
 		$Sprite.visible = false
 

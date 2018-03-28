@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Prefabs/Cursor.gd" type="Script" id=1]
+[ext_resource path="res://assets/mouse_clicked.png" type="Texture" id=2]
+[ext_resource path="res://assets/mouse_pointer.png" type="Texture" id=3]
+[ext_resource path="res://Prefabs/Movable.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Cursor" type="StaticBody2D"]
+
+z_index = 2
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index" ]
+clicked_texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -5, -5 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Movable" parent="." index="1" instance=ExtResource( 4 )]
+
+visible = false
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="2"]
+
+position = Vector2( 0, 0.358521 )
+build_mode = 0
+polygon = PoolVector2Array( -3.1308, -6.17554, 93.6969, 95.9336, 60.6874, 107.377, 79.6129, 142.587, 59.8072, 152.71, 41.3219, 115.299, -0.490051, 139.946 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 32
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Area2D" to="." method="on_hover"]
+
+[connection signal="area_exited" from="Area2D" to="." method="on_hover_exit"]
+
+

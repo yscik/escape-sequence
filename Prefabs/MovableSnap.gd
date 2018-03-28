@@ -5,6 +5,7 @@ func _ready():
 	on()
 
 func on():
+	.on()
 	toggleCollisions(true)
 	set_position(Vector2(stepify(position.x, 64), stepify(position.y, 64)))
 	$Platformer.power_set()
@@ -21,5 +22,6 @@ func toggleCollisions(enabled):
 	pass
 
 func off():
+	.off()
 	toggleCollisions(false)
 	pass
