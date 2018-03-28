@@ -11,7 +11,7 @@
 [node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
-spawn = 0
+spawn = 8
 
 [node name="Background" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -27,13 +27,23 @@ position = Vector2( 2199.45, -3048.44 )
 
 [node name="Connections-3" parent="Meta" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 3008, -1408 )
+position = Vector2( 3200, -1600 )
+
+[node name="ML-2" parent="Meta/Connections-3" index="2"]
+
+position = Vector2( 704, 1344 )
+
+[node name="ML-3" parent="Meta/Connections-3" index="4"]
+
+position = Vector2( 384, -320 )
 
 [node name="Area-4" parent="Meta" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( -1472, -2880 )
 
 [node name="UI" parent="." index="2" instance=ExtResource( 7 )]
+
+_sections_unfolded = [ "Pause" ]
 
 
 [editable path="Meta/Connections-3"]

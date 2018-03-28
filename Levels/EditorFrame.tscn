@@ -16,7 +16,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -2222.0
 margin_top = -4129.0
-margin_right = 760.0
+margin_right = 2353.0
 margin_bottom = -1922.0
 rect_scale = Vector2( 2.5, 2.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -43,7 +43,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -2150.19, -3941.19, 4999.45, -3943.14, 5022.9, 1346.74, -2190.57, 1346.74, -2167.11, -4119.08, -2378.23, -4119.08, -2378.23, 1452.3, 5245.76, 1464.03, 5234.03, -4201.19, -2129.17, -4164.04 )
+polygon = PoolVector2Array( -2150.19, -3941.19, 9152, -3968, 9152, 1344, -2190.57, 1346.74, -2167.11, -4119.08, -2378.23, -4119.08, -2378.23, 1452.3, 9280, 1472, 9280, -4160, -2129.17, -4164.04 )
 
 [node name="Editor-Frame" type="Node2D" parent="." index="2"]
 
@@ -53,25 +53,54 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Editor-left" type="Sprite" parent="Editor-Frame" index="0"]
 
-position = Vector2( -563.2, -204.8 )
+position = Vector2( -563.259, -204.447 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Editor-Top" type="Sprite" parent="Editor-Frame" index="1"]
+[node name="Editor-Top" type="NinePatchRect" parent="Editor-Frame" index="1"]
 
-position = Vector2( 147.442, -662.802 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -439.0
+margin_top = -713.0
+margin_right = 1418.0
+margin_bottom = -613.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+patch_margin_left = 1200
+axis_stretch_horizontal = 1
+_sections_unfolded = [ "Anchor", "Axis Stretch", "Patch Margin", "Rect", "Transform" ]
 
 [node name="Editor-Right" type="Sprite" parent="Editor-Frame" index="2"]
 
-position = Vector2( 983.143, -204.8 )
+position = Vector2( 1665.17, -204.494 )
 texture = ExtResource( 4 )
 
-[node name="Editor-Bottom" type="Sprite" parent="Editor-Frame" index="3"]
+[node name="Editor-Bottom" type="NinePatchRect" parent="Editor-Frame" index="3"]
 
-position = Vector2( 146.96, 275.093 )
-scale = Vector2( 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -439.0
+margin_top = 248.0
+margin_right = 1417.0
+margin_bottom = 303.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 texture = ExtResource( 5 )
+patch_margin_left = 1200
+_sections_unfolded = [ "Patch Margin", "Rect" ]
 
 

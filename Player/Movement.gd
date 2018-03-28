@@ -68,7 +68,7 @@ func platform_movement():
 		v.x = 0
 	
 	if player.is_on_floor():
-		if skills.up && Input.is_key_pressed(KEY_UP):
+		if input.up:
 			v.y = -400
 #		else:
 #			v.y = 0
@@ -109,16 +109,16 @@ func speed(direction, accel):
 	
 func topdown_movement():
 	
-	if skills.left && Input.is_key_pressed(KEY_LEFT):
+	if input.left:
 		speed("x", -1)
-	elif skills.right && Input.is_key_pressed(KEY_RIGHT):
+	elif input.right:
 		speed("x", 1)
 	else:
 		v.x = 0
 	
-	if skills.up && Input.is_key_pressed(KEY_UP):
+	if input.up:
 		speed("y", -1)
-	elif skills.down && Input.is_key_pressed(KEY_DOWN):
+	elif input.down:
 		speed("y", 1)
 	else:
 		v.y = 0
