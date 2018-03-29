@@ -10,7 +10,7 @@ source_file="res://assets/spikes.png"
 source_md5="67f355ba28c99d70cc3d5824a531e0e0"
 
 dest_files=[ "res://.import/spikes.png-8623a6308d30caf0ad1d5cef975bbe78.stex" ]
-dest_md5="06a3a83928e33f19eb6759f003581a1a"
+dest_md5="b699f3a5b0971bb342f40f959e6ba03b"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

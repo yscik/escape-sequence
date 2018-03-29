@@ -1,40 +1,49 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/PlatformerArea.gd" type="Script" id=1]
+[ext_resource path="res://platformer/background/bg01.png" type="Texture" id=2]
+[ext_resource path="res://platformer/background/bg02.png" type="Texture" id=3]
 
-[sub_resource type="Gradient" id=1]
-
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-
-flags = 4
-gradient = SubResource( 1 )
-width = 512
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.1259, 31.8523 )
 
-[node name="Platformer" type="Polygon2D"]
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.537736, 1 )
+colors = PoolColorArray( 0.857143, 0.565848, 0.565848, 1, 0.996857, 1, 0.597656, 1, 0.112671, 0.554688, 0.285334, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "ShiftBackground"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1150, 650 ), Rect2( 128, 256, 1150, 650 ), Rect2( 256, 0, 1150, 650 ) ]
+}
+
+[node name="Platformer" type="Node2D"]
 
 position = Vector2( -1248, -1088 )
 scale = Vector2( 3.06359, 2.70225 )
-polygon = PoolVector2Array( 0, 0, 1152, 0, 1152, 640, 0, 640 )
-uv = PoolVector2Array(  )
-color = Color( 0.953125, 0.930786, 0.930786, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = SubResource( 2 )
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = -90.0
-invert_enable = false
-invert_border = 100.0
-_sections_unfolded = [ "Material", "Texture", "Transform" ]
+_sections_unfolded = [ "Material", "Texture", "Transform", "Visibility" ]
 
 [node name="AreaMode" type="Area2D" parent="." index="0" groups=[
 "Physics",
@@ -59,9 +68,77 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMode" index="0"]
 
+visible = false
 position = Vector2( 0, -0.0645599 )
 scale = Vector2( 1, 0.998148 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
+
+position = Vector2( 0, -8.88148 )
+polygon = PoolVector2Array( 0, 11.842, 1148.98, 11.842, 1148.98, 651.309, 0, 651.309 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = SubResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = -90.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture", "Visibility" ]
+
+[node name="Background" type="TextureRect" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.10498 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1144.0
+margin_bottom = 643.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 2
+_sections_unfolded = [ "Axis Stretch", "Hint", "Patch Margin", "Rect", "Region", "Transform", "Visibility" ]
+
+[node name="Glitch" type="TextureRect" parent="." index="3"]
+
+self_modulate = Color( 1, 1, 1, 0.348078 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 574.0
+margin_bottom = 320.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 2
+_sections_unfolded = [ "Rect", "Region", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/ShiftBackground = SubResource( 4 )
+blend_times = [  ]
 
 [connection signal="body_entered" from="AreaMode" to="AreaMode" method="player_enter"]
 

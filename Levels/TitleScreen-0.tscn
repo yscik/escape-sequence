@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ui/TitleBg.png" type="Texture" id=1]
 [ext_resource path="res://ui/Logo.png" type="Texture" id=2]
@@ -8,10 +8,11 @@
 [ext_resource path="res://platformer/EnterKey.gd" type="Script" id=6]
 [ext_resource path="res://ui/EnterKey.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=9]
-[ext_resource path="res://ui/HintWin.png" type="Texture" id=10]
-[ext_resource path="res://ui/HintStart.png" type="Texture" id=11]
-[ext_resource path="res://ui/Victory.png" type="Texture" id=12]
+[ext_resource path="res://ui/RightKey.png" type="Texture" id=9]
+[ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/HintWin.png" type="Texture" id=11]
+[ext_resource path="res://ui/HintStart.png" type="Texture" id=12]
+[ext_resource path="res://ui/Victory.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -227,7 +228,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 5.24414, 492.559 )
 skill = "right"
 
-[node name="Checkpoint" parent="." index="5" instance=ExtResource( 9 )]
+[node name="Key" parent="RightKey" index="0"]
+
+texture = ExtResource( 9 )
+
+[node name="Checkpoint" parent="." index="5" instance=ExtResource( 10 )]
 
 position = Vector2( -79.5227, -74.0356 )
 spawn = true
@@ -241,12 +246,12 @@ skill_convert = false
 [node name="HintWin" type="Sprite" parent="." index="6"]
 
 position = Vector2( -470.677, -139.63 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="HintStart" type="Sprite" parent="." index="7"]
 
 position = Vector2( -323.348, 169.761 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Win" type="Node2D" parent="." index="8"]
 
@@ -256,7 +261,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Bg" type="Sprite" parent="Win" index="0"]
 
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -110.368, 7.74597 )
+position = Vector2( -110.368, 7.74594 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -280,7 +285,7 @@ __meta__ = {
 [node name="Victory" type="Sprite" parent="Win/Victory" index="0"]
 
 position = Vector2( 7.91998, -3.26215 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Win/Victory" index="1"]
 
@@ -300,3 +305,4 @@ blend_times = [  ]
 [connection signal="click" from="EscButton/Clickable" to="EscButton" method="on_click"]
 
 
+[editable path="RightKey"]

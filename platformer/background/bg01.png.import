@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background03.png-f555523b76667d12ac63700931dfecea.stex"
+path="res://.import/bg01.png-ea6a1eba7619c6898ef8abb5667da971.stex"
 
 [deps]
 
-source_file="res://platformer/tiles/background03.png"
-source_md5="7b1ad8a4c893c144a8362b0f32e4c47c"
+source_file="res://platformer/background/bg01.png"
+source_md5="306dfc15c9779c6954cf462bf4021de2"
 
-dest_files=[ "res://.import/background03.png-f555523b76667d12ac63700931dfecea.stex" ]
-dest_md5="500b8e8dc131988efbe5588222975c30"
+dest_files=[ "res://.import/bg01.png-ea6a1eba7619c6898ef8abb5667da971.stex" ]
+dest_md5="77fb94058bd67803c93c7b7db606349f"
 
 [params]
 

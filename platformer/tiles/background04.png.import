@@ -10,7 +10,7 @@ source_file="res://platformer/tiles/background04.png"
 source_md5="5c7c51434db3a2b5e5ccd7cfcf8564b7"
 
 dest_files=[ "res://.import/background04.png-7c7847a5cba8f4ba40e95be529a3c0ac.stex" ]
-dest_md5="7d8ac179cf136e0d393c637fb8a702c0"
+dest_md5="55d31e4694cb3ed34eebba7a60b22b66"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
