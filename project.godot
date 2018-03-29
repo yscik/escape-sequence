@@ -34,6 +34,7 @@ window/stretch/aspect="expand"
 2d_physics/layer_5="player"
 2d_physics/layer_6="click"
 2d_physics/layer_7="power"
+2d_physics/layer_8="ui"
 
 [rendering]
 

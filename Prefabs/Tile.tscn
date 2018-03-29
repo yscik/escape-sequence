@@ -20,6 +20,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+marker_when_inactive = false
 tile = 0
 hideSprite = true
 on = true

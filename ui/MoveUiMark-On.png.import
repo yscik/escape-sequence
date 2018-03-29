@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouse_pointer.png-1b68aa641ea5600da1a94e55b2980235.stex"
+path="res://.import/MoveUiMark-On.png-b0225e97d8e59b58c8b55fc6bdcb6895.stex"
 
 [deps]
 
-source_file="res://assets/mouse_pointer.png"
-source_md5="135c6897bdc7ce898b94c9605b09b046"
+source_file="res://ui/MoveUiMark-On.png"
+source_md5="578d2ddbf9ad5112131270d82c4a2a0d"
 
-dest_files=[ "res://.import/mouse_pointer.png-1b68aa641ea5600da1a94e55b2980235.stex" ]
-dest_md5="84e4f6802c7d4aad0cb428d2dd2e01a1"
+dest_files=[ "res://.import/MoveUiMark-On.png-b0225e97d8e59b58c8b55fc6bdcb6895.stex" ]
+dest_md5="fd2c6a2f8c4bfe32f706a41f49ad7745"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

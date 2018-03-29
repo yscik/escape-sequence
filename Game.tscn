@@ -19,8 +19,6 @@ spawn = 8
 
 [node name="Area-1" parent="Meta" index="0" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-
 [node name="Workshop-2" parent="Meta" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 2199.45, -3048.44 )
@@ -32,6 +30,10 @@ position = Vector2( 3200, -1600 )
 [node name="ML-2" parent="Meta/Connections-3" index="2"]
 
 position = Vector2( 704, 1344 )
+
+[node name="Door" parent="Meta/Connections-3/ML-2" index="6"]
+
+marker_when_inactive = false
 
 [node name="ML-3" parent="Meta/Connections-3" index="4"]
 

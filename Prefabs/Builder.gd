@@ -52,9 +52,10 @@ func build_block(pos):
 
 func set_pos(pos):
 	
-	if !$Cursor.working:
+	if !$Cursor || !$Cursor.working:
 		$Tween.stop(self)
 		moved_block = null
+		return
 		
 	current_pos = pos
 	$Cursor.global_position = pos

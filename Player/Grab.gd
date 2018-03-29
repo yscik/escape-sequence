@@ -4,6 +4,10 @@ extends Node2D
 var grab_offset
 var grabbed = null
 var target = null
+
+func _ready():
+	
+	pass
 	
 func _unhandled_key_input(event):
 	if State.player_skills.grab && event.pressed && event.scancode == KEY_SPACE:
@@ -18,11 +22,14 @@ func _process(delta):
 			grabbed.global_position = State.player.global_position  + grab_offset
 		else:
 			grabbed.global_position = global_position
-	
+	if target:
+		$Mark.global_position = target.global_position
+		$Mark.global_rotation = 0
+
 func grab():
 	grabbed = target
 	grabbed.grabbed = true
-	
+	$Mark.visible = false
 	if grabbed.offset:
 		grab_offset = grabbed.global_position - State.player.global_position
 		
@@ -38,9 +45,21 @@ func drop():
 func can_grab(movable):
 	target = movable
 	movable.in_grab_range(true)
-	
+	if target != grabbed:
+		focus()
 
 func cant_grab(movable):
 	movable.in_grab_range(false)
+	$Mark.visible = false
 	target = null
 
+func focus():
+	var targetBounds = target.find_node("Movable")
+	var mark = $Mark/MoveMark
+	mark.rect_size = targetBounds.rect_size
+	mark.rect_position = targetBounds.rect_position
+	
+	$Tween.interpolate_property($Mark, "scale", Vector2(2,2), Vector2(1,1), 0.3, Tween.TRANS_CIRC, Tween.EASE_IN_OUT)
+	$Tween.start()
+	$Mark.visible = true
+	

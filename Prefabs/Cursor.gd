@@ -1,4 +1,4 @@
-extends "res://Prefabs/Movable.gd"
+extends Node2D
 
 export (Texture) var clicked_texture 
 var base_texture
@@ -6,11 +6,11 @@ var base_pos
 var clicked_pos
 
 var working = true
+var grabbed = false
 
 var target
 
 func _ready():
-	offset = true
 	base_texture = $Sprite.texture
 	base_pos = $Sprite.position
 	clicked_pos = base_pos + Vector2(-2, -2)

@@ -7,10 +7,10 @@ path="res://.import/mouse_clicked.png-2a18f7e9fcf42bcf836ef4b046717144.stex"
 [deps]
 
 source_file="res://assets/mouse_clicked.png"
-source_md5="3f9076a472bc6fb112f86c75f013add5"
+source_md5="160c6794a81ada3c06a72ab03bdeb83a"
 
 dest_files=[ "res://.import/mouse_clicked.png-2a18f7e9fcf42bcf836ef4b046717144.stex" ]
-dest_md5="fa293977afd52a9d68ccd049c99da12a"
+dest_md5="3ed8cf79cac743be2efa1893c2820baa"
 
 [params]
 

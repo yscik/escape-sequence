@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assembler/Assembly.gd" type="Script" id=2]
@@ -7,30 +7,20 @@
 [ext_resource path="res://Prefabs/Assembling.gd" type="Script" id=5]
 [ext_resource path="res://assembler/order/Order.tres" type="TileSet" id=6]
 [ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/Builder.gd" type="Script" id=8]
-[ext_resource path="res://ui/Toolbar.png" type="Texture" id=9]
-[ext_resource path="res://ui/ButtonAdd.png" type="Texture" id=10]
-[ext_resource path="res://Prefabs/Clickable.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Workshop/BuilderTiles.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Prefabs/Cursor.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Prefabs/Door.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Spikes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Builder.gd" type="Script" id=9]
+[ext_resource path="res://ui/Toolbar.png" type="Texture" id=10]
+[ext_resource path="res://ui/ButtonAdd.png" type="Texture" id=11]
+[ext_resource path="res://Prefabs/Clickable.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Workshop/BuilderTiles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Prefabs/Cursor.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 492.993, 137.732 )
-
-[sub_resource type="Gradient" id=2]
-
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 0.284485, 0.518527, 0.921875, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-
-flags = 4
-gradient = SubResource( 2 )
-width = 512
 
 [node name="Workshop-2" type="Node2D"]
 
@@ -86,9 +76,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Platformer" parent="Platform-Assembling/Level" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -13.9258, -566.024 )
-scale = Vector2( 2.02397, 1.208 )
-texture = SubResource( 3 )
+position = Vector2( -13.9258, -566.88 )
+scale = Vector2( 2.02397, 1.18126 )
 
 [node name="TileMap" type="TileMap" parent="Platform-Assembling/Level" index="1"]
 
@@ -109,7 +98,7 @@ collision_layer = 1
 collision_mask = 16
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -327680, 0, 6, -327679, 0, 196609, -327678, 0, 196609, -327677, 0, 196609, -327676, 0, 196609, -327675, 0, 131076, -327674, 0, 196609, -327673, 0, 196609, -327672, 0, 196609, -327671, 0, 196609, -327670, 0, 196609, -327669, 0, 10, -327668, 0, 9, -327667, 0, 196609, -327666, 0, 7, -327660, 0, 196608, -327659, 0, 196609, -327658, 0, 196609, -327657, 0, 196609, -327656, 0, 196609, -327655, 0, 196609, -327654, 0, 196609, -327653, 0, 196609, -327652, 0, 196610, -262144, 0, 65541, -262139, 0, 65541, -262133, 0, 65537, -262132, 0, 65545, -262130, 0, 8, -262129, 0, 2, -196608, 0, 65541, -196603, 0, 65541, -196596, 0, 131077, -196594, 0, 65537, -196593, 0, 65538, -196577, 0, 1, -196576, 0, 2, -131072, 0, 65541, -131067, 0, 65541, -131041, 0, 65537, -131040, 0, 65538, -65536, 0, 65541, -65533, 0, 6, -65532, 0, 196609, -65531, 0, 65543, 0, 0, 8, 1, 0, 9, 2, 0, 196609, 3, 0, 65543, 65536, 0, 65537, 65537, 0, 65538, 65552, 0, 5, 131080, 0, 196608, 131081, 0, 196609, 131082, 0, 196609, 131083, 0, 196609, 131084, 0, 196609, 131085, 0, 196610, 131088, 0, 65541, 131096, 0, 196608, 131097, 0, 196609, 131098, 0, 196610, 196610, 0, 196608, 196611, 0, 196609, 196612, 0, 196610, 196624, 0, 65541, 262150, 0, 1, 262151, 0, 65536, 262152, 0, 2, 262160, 0, 65541, 262165, 0, 5, 262173, 0, 5, 393215, 0, 196608, 327680, 0, 7, 327682, 0, 5, 327686, 0, 131073, 327687, 0, 196619, 327688, 0, 131074, 327692, 0, 5, 327696, 0, 65541, 327699, 0, 196608, 327700, 0, 196609, 327701, 0, 65543, 327709, 0, 8, 327710, 0, 2, 393216, 0, 65542, 393217, 0, 196609, 393218, 0, 196611, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 65544, 393223, 0, 131072, 393224, 0, 65547, 393225, 0, 196609, 393226, 0, 196609, 393227, 0, 196609, 393228, 0, 196611, 393229, 0, 196610, 393232, 0, 131077, 393245, 0, 65537, 393246, 0, 65547, 393247, 0, 196609, 393248, 0, 196609, 393249, 0, 196610 )
+tile_data = PoolIntArray( -327680, 0, 6, -327679, 0, 196609, -327678, 0, 196609, -327677, 0, 196609, -327676, 0, 196609, -327675, 0, 131076, -327674, 0, 196609, -327673, 0, 196609, -327672, 0, 196609, -327671, 0, 196609, -327670, 0, 196609, -327669, 0, 10, -327668, 0, 9, -327667, 0, 196609, -327666, 0, 7, -327660, 0, 196608, -327659, 0, 196609, -327658, 0, 196609, -327657, 0, 196609, -327656, 0, 196609, -327655, 0, 196609, -327654, 0, 196609, -327653, 0, 196609, -327652, 0, 196610, -262144, 0, 65541, -262139, 0, 65541, -262133, 0, 65537, -262132, 0, 65545, -262130, 0, 8, -262129, 0, 2, -196608, 0, 65541, -196603, 0, 65541, -196596, 0, 131077, -196594, 0, 65537, -196593, 0, 65538, -196577, 0, 1, -196576, 0, 2, -131072, 0, 65541, -131067, 0, 65541, -131041, 0, 65537, -131040, 0, 65538, -65536, 0, 65541, -65533, 0, 6, -65532, 0, 196609, -65531, 0, 65543, 0, 0, 65541, 3, 0, 65541, 65536, 0, 65542, 65537, 0, 196609, 65538, 0, 196609, 65539, 0, 65543, 65552, 0, 5, 131078, 0, 5, 131083, 0, 196608, 131084, 0, 196609, 131085, 0, 196610, 131088, 0, 65541, 131096, 0, 196608, 131097, 0, 196609, 131098, 0, 196610, 196613, 0, 6, 196614, 0, 65543, 196624, 0, 65541, 262148, 0, 196608, 262149, 0, 65543, 262152, 0, 5, 262160, 0, 65541, 262165, 0, 5, 262173, 0, 5, 393215, 0, 196608, 327680, 0, 7, 327682, 0, 1, 327683, 0, 2, 327688, 0, 8, 327689, 0, 2, 327692, 0, 5, 327696, 0, 65541, 327699, 0, 196608, 327700, 0, 196609, 327701, 0, 65543, 327709, 0, 8, 327710, 0, 2, 393216, 0, 65542, 393217, 0, 196609, 393218, 0, 65544, 393219, 0, 65547, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 65544, 393225, 0, 65547, 393226, 0, 196609, 393227, 0, 196609, 393228, 0, 196611, 393229, 0, 196610, 393232, 0, 131077, 393245, 0, 65537, 393246, 0, 65547, 393247, 0, 196609, 393248, 0, 196609, 393249, 0, 196610 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 __meta__ = {
@@ -135,7 +124,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 3, 0, -327667, 3, 0, -327666, 3, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327656, 0, 0, -327655, 0, 0, -327654, 0, 0, -327653, 0, 0, -327652, 0, 0, -262144, 0, 0, -262139, 2, 0, -262133, 3, 0, -262132, 3, 0, -262130, 0, 0, -262129, 0, 0, -196608, 0, 0, -196603, 2, 0, -196596, 3, 0, -196594, 0, 0, -196593, 0, 0, -196577, 4, 0, -196576, 4, 0, -131072, 0, 0, -131067, 2, 0, -131041, 4, 0, -131040, 4, 0, -65536, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, 0, 1, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 65536, 1, 0, 65537, 1, 0, 65552, 2, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131088, 2, 0, 131096, 4, 0, 131097, 4, 0, 131098, 4, 0, 196610, 1, 0, 196611, 1, 0, 196612, 0, 0, 196624, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262160, 2, 0, 262165, 4, 0, 262173, 4, 0, 393215, 0, 0, 327680, 0, 0, 327682, 1, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327692, 0, 0, 327696, 0, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327709, 4, 0, 327710, 4, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393232, 0, 0, 393245, 4, 0, 393246, 4, 0, 393247, 4, 0, 393248, 4, 0, 393249, 4, 0 )
+tile_data = PoolIntArray( -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 3, 0, -327667, 3, 0, -327666, 3, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327656, 0, 0, -327655, 0, 0, -327654, 0, 0, -327653, 0, 0, -327652, 0, 0, -262144, 0, 0, -262139, 2, 0, -262133, 3, 0, -262132, 3, 0, -262130, 0, 0, -262129, 0, 0, -196608, 0, 0, -196603, 2, 0, -196596, 3, 0, -196594, 0, 0, -196593, 0, 0, -196577, 4, 0, -196576, 4, 0, -131072, 0, 0, -131067, 2, 0, -131041, 4, 0, -131040, 4, 0, -65536, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, 0, 1, 0, 3, 2, 0, 65536, 1, 0, 65537, 1, 0, 65538, 2, 0, 65539, 2, 0, 65552, 2, 0, 131078, 1, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131088, 2, 0, 131096, 4, 0, 131097, 4, 0, 131098, 4, 0, 196613, 0, 0, 196614, 0, 0, 196624, 2, 0, 262148, 1, 0, 262149, 1, 0, 262152, 1, 0, 262160, 2, 0, 262165, 4, 0, 262173, 4, 0, 393215, 0, 0, 327680, 0, 0, 327682, 0, 0, 327683, 0, 0, 327688, 1, 0, 327689, 1, 0, 327692, 0, 0, 327696, 0, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327709, 4, 0, 327710, 4, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393232, 0, 0, 393245, 4, 0, 393246, 4, 0, 393247, 4, 0, 393248, 4, 0, 393249, 4, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="DownKey" parent="Platform-Assembling/Level" index="2" instance=ExtResource( 7 )]
@@ -143,10 +132,29 @@ _sections_unfolded = [ "Cell", "Transform" ]
 position = Vector2( 118.659, -279.142 )
 skill = "down"
 
+[node name="Spikes" parent="Platform-Assembling/Level" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 2248.66, 128.602 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeathArea" parent="Platform-Assembling/Level/Spikes" index="0"]
+
+position = Vector2( -10.8887, 46.9143 )
+scale = Vector2( 3.21483, 0.672569 )
+
+[node name="Spikes" parent="Platform-Assembling/Level/Spikes" index="1"]
+
+margin_left = -84.0
+
+[node name="Spikes2" parent="Platform-Assembling/Level" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 1162.39, 127.927 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Builder" type="Node2D" parent="Platform-Assembling" index="1"]
 
 position = Vector2( -717.17, -435.685 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="ToolbarUi" type="Node2D" parent="Platform-Assembling/Builder" index="0"]
@@ -161,19 +169,19 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 117.165, -0.402658 )
 rotation = 1.5708
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Button" type="Sprite" parent="Platform-Assembling/Builder/ToolbarUi" index="1"]
 
 position = Vector2( 0.606264, -0.841928 )
 rotation = 1.5708
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Clickable" parent="Platform-Assembling/Builder/ToolbarUi/Button" index="0" instance=ExtResource( 11 )]
+[node name="Clickable" parent="Platform-Assembling/Builder/ToolbarUi/Button" index="0" instance=ExtResource( 12 )]
 
-[node name="Tiles" parent="Platform-Assembling/Builder" index="1" instance=ExtResource( 12 )]
+[node name="Tiles" parent="Platform-Assembling/Builder" index="1" instance=ExtResource( 13 )]
 
 [node name="Tween" type="Tween" parent="Platform-Assembling/Builder" index="2"]
 
@@ -184,17 +192,17 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Cursor" parent="Platform-Assembling/Builder" index="3" instance=ExtResource( 13 )]
+[node name="Cursor" parent="Platform-Assembling/Builder" index="3" instance=ExtResource( 14 )]
 
-[node name="Door" parent="Platform-Assembling" index="2" instance=ExtResource( 14 )]
+[node name="Door" parent="Platform-Assembling" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -992, -1568 )
 
-[node name="Tile" parent="Platform-Assembling" index="3" instance=ExtResource( 15 )]
+[node name="Tile" parent="Platform-Assembling" index="3" instance=ExtResource( 16 )]
 
-position = Vector2( -544, -672 )
+position = Vector2( -484, -798 )
 
-[node name="Door2" parent="Platform-Assembling" index="4" instance=ExtResource( 14 )]
+[node name="Door2" parent="Platform-Assembling" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( -416, -1376 )
 
@@ -203,4 +211,5 @@ position = Vector2( -416, -1376 )
 [connection signal="click" from="Platform-Assembling/Builder/ToolbarUi/Button/Clickable" to="Platform-Assembling/Builder" method="manual_add_tiles"]
 
 
+[editable path="Platform-Assembling/Level/Spikes"]
 [editable path="Platform-Assembling/Builder/Tiles"]
