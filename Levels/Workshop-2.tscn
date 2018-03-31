@@ -3,7 +3,7 @@
 [ext_resource path="res://Game/Checkpoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assembler/Assembly.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Platformer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://platformer/Tile02A.tres" type="TileSet" id=4]
+[ext_resource path="res://platformer/BlockTiles.tres" type="TileSet" id=4]
 [ext_resource path="res://Prefabs/Assembling.gd" type="Script" id=5]
 [ext_resource path="res://assembler/order/Order.tres" type="TileSet" id=6]
 [ext_resource path="res://Prefabs/Pickup.tscn" type="PackedScene" id=7]
@@ -34,9 +34,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-7" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -514.769, -91.3068 )
-spawn = true
 skill_down = false
-skill_convert = false
 
 [node name="StartTrigger" type="Area2D" parent="." index="1"]
 
@@ -131,6 +129,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 position = Vector2( 118.659, -279.142 )
 skill = "down"
+visual = 3
 
 [node name="Spikes" parent="Platform-Assembling/Level" index="3" instance=ExtResource( 8 )]
 
@@ -197,6 +196,7 @@ playback/speed = 1.0
 [node name="Door" parent="Platform-Assembling" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -992, -1568 )
+marker_when_inactive = false
 
 [node name="Tile" parent="Platform-Assembling" index="3" instance=ExtResource( 16 )]
 
@@ -205,6 +205,7 @@ position = Vector2( -484, -798 )
 [node name="Door2" parent="Platform-Assembling" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( -416, -1376 )
+marker_when_inactive = false
 
 [connection signal="body_entered" from="StartTrigger" to="Platform-Assembling" method="start" flags=6]
 

@@ -68,7 +68,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.6, 3.2, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -77.1305, 643.609 ), Vector2( -77.1305, -622.848 ), Vector2( -77.1305, 51.35 ), Vector2( -77.1305, 23.0576 ) ]
+"values": [ Vector2( -77.1305, 643.609 ), Vector2( -77.1305, -425.518 ), Vector2( -77.1305, 51.35 ), Vector2( -77.1305, 23.0576 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:visible")
@@ -235,13 +235,11 @@ texture = ExtResource( 9 )
 [node name="Checkpoint" parent="." index="5" instance=ExtResource( 10 )]
 
 position = Vector2( -79.5227, -74.0356 )
-spawn = true
 skill_right = false
 skill_left = false
 skill_up = false
 skill_down = false
 skill_grab = false
-skill_convert = false
 
 [node name="HintWin" type="Sprite" parent="." index="6"]
 
@@ -255,7 +253,7 @@ texture = ExtResource( 12 )
 
 [node name="Win" type="Node2D" parent="." index="8"]
 
-position = Vector2( 0, -73.9029 )
+position = Vector2( -441.82, -76.269 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bg" type="Sprite" parent="Win" index="0"]
@@ -268,8 +266,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Victory" type="StaticBody2D" parent="Win" index="1"]
 
-visible = false
-position = Vector2( -77.1305, 643.609 )
+position = Vector2( -64, 2048 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 16

@@ -19,8 +19,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="Checkpoint" parent="Level-8" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -128, 512 )
-spawn = true
-skill_convert = false
 
 [node name="ML-1" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -117,10 +115,6 @@ tile_data = PoolIntArray( -393216, 0, 6, -393215, 0, 196609, -393214, 0, 196609,
 [node name="MoveUi" parent="ML-3" index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 491.094, 281.597 )
-
-[node name="MoveUi2" parent="ML-3" index="7" instance=ExtResource( 4 )]
-
-position = Vector2( -256, 320 )
 
 
 [editable path="ML-1"]

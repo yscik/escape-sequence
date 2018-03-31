@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 59.5347, 106.875 )
+extents = Vector2( 70.3033, 153.249 )
 
 [node name="Checkpoint" type="Area2D"]
 
@@ -20,15 +20,17 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Transform" ]
+spawn = true
 skill_right = true
 skill_left = true
 skill_up = true
 skill_down = true
 skill_grab = true
+skill_convert = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 38.7812, -50.0277 )
+position = Vector2( 47.8062, -87.9328 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

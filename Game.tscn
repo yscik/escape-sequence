@@ -1,31 +1,71 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Game/SetSpawn.gd" type="Script" id=1]
-[ext_resource path="res://Levels/EditorFrame.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Connections-3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Area-4.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://platformer/tiles/02.png" type="Texture" id=2]
+[ext_resource path="res://platformer/tiles/purpletiles.png" type="Texture" id=3]
+[ext_resource path="res://platformer/tiles/bluetiles3.png" type="Texture" id=4]
+[ext_resource path="res://platformer/tiles/P S Y C H E D E L I C.png" type="Texture" id=5]
+[ext_resource path="res://platformer/BlockTiles.tres" type="TileSet" id=6]
+[ext_resource path="res://Levels/EditorFrame.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Area-1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Workshop-2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Connections-3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Area-4.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://audio/Music.ogg" type="AudioStream" id=13]
+[ext_resource path="res://audio/Click-2_bip.ogg" type="AudioStream" id=14]
 
-[node name="Game" type="Node" index="0"]
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.537736, 1 )
+colors = PoolColorArray( 0.857143, 0.565848, 0.565848, 1, 0.996857, 1, 0.597656, 1, 0.112671, 0.554688, 0.285334, 1 )
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 0.5, 1 )
+colors = PoolColorArray( 0.380341, 0.945312, 0.945312, 1, 0.964844, 0.895855, 0.840469, 1, 0.112671, 0.129937, 0.554688, 1 )
+
+[sub_resource type="Gradient" id=4]
+
+offsets = PoolRealArray( 0, 0.476415, 0.943396 )
+colors = PoolColorArray( 0.960938, 0.116364, 0.532052, 1, 0.53656, 0.65916, 0.921875, 1, 0.133896, 0.704294, 0.878906, 1 )
+
+[sub_resource type="Gradient" id=5]
+
+offsets = PoolRealArray( 0, 0.419811, 1 )
+colors = PoolColorArray( 0.487061, 0.890625, 0.0834961, 1, 0.851562, 0.622719, 0.123077, 1, 0.761719, 0.0862885, 0.624522, 1 )
+
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
-spawn = 8
+spawn = 4
+visual_1 = ExtResource( 2 )
+bg_1 = SubResource( 2 )
+visual_2 = ExtResource( 3 )
+bg_2 = SubResource( 3 )
+visual_3 = ExtResource( 4 )
+bg_3 = SubResource( 4 )
+visual_4 = ExtResource( 5 )
+bg_4 = SubResource( 5 )
+tileset = ExtResource( 6 )
 
-[node name="Background" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Background" parent="." index="0" instance=ExtResource( 7 )]
 
 [node name="Meta" type="Node" parent="." index="1"]
 
-[node name="Area-1" parent="Meta" index="0" instance=ExtResource( 3 )]
+[node name="Area-1" parent="Meta" index="0" instance=ExtResource( 8 )]
 
-[node name="Workshop-2" parent="Meta" index="1" instance=ExtResource( 4 )]
+[node name="Workshop-2" parent="Meta" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 2199.45, -3048.44 )
 
-[node name="Connections-3" parent="Meta" index="2" instance=ExtResource( 5 )]
+[node name="Connections-3" parent="Meta" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 3200, -1600 )
+
+[node name="Checkpoint" parent="Meta/Connections-3/Level-8" index="0"]
+
+position = Vector2( -112.838, 492.136 )
 
 [node name="ML-2" parent="Meta/Connections-3" index="2"]
 
@@ -39,13 +79,31 @@ marker_when_inactive = false
 
 position = Vector2( 384, -320 )
 
-[node name="Area-4" parent="Meta" index="3" instance=ExtResource( 6 )]
+[node name="Area-4" parent="Meta" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( -1472, -2880 )
 
-[node name="UI" parent="." index="2" instance=ExtResource( 7 )]
+[node name="UI" parent="." index="2" instance=ExtResource( 12 )]
 
 _sections_unfolded = [ "Pause" ]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="SFX" type="Node" parent="." index="4"]
+
+[node name="Tile" type="AudioStreamPlayer" parent="SFX" index="0"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 
 [editable path="Meta/Connections-3"]

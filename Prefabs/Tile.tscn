@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/MovableTile.gd" type="Script" id=1]
-[ext_resource path="res://platformer/tiles/02.png" type="Texture" id=2]
+[ext_resource path="res://platformer/BlockTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Prefabs/Movable.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -30,12 +30,26 @@ on = true
 position = Vector2( 0, 0.358521 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="TileMap" parent="." index="1"]
 
-texture = ExtResource( 2 )
-flip_h = true
-region_enabled = true
-region_rect = Rect2( 320, 128, 64, 64 )
+position = Vector2( -32, 31 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65536, 0, 196613 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Movable" parent="." index="2" instance=ExtResource( 3 )]
