@@ -6,6 +6,7 @@ var character
 var enabled = true
 onready var in_platformer = State.in_platformer
 
+
 func _init(player):
 	self.player = player
 	skills = player.skills
@@ -67,12 +68,14 @@ func platform_movement():
 	else:
 		v.x = 0
 	
-	if player.is_on_floor():
-		if input.up:
-			v.y = -400
-#		else:
-#			v.y = 0
+	if input.up:
+		if player.is_on_floor():
+			v.y  = -400
 	else:
+		if v.y < 20:
+			v.y += 20
+	
+	if !player.is_on_floor():
 		v = v + GRAVITY 
 		
 	player.move_and_slide(v.rotated(State.area.global_rotation), GRAVITY.rotated(State.area.global_rotation) * -1)

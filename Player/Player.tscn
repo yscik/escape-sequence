@@ -1,26 +1,57 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://platformer/Player.gd" type="Script" id=1]
 [ext_resource path="res://platformer/PlayerSprites.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Player/Grab.gd" type="Script" id=3]
 [ext_resource path="res://ui/MoveMark.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 20.2135
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="Animation" id=5]
+
+resource_name = "Focus"
+length = 0.5
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.49 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 20.8008
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 163.226
+radius = 239.577
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -74,7 +105,7 @@ __meta__ = {
 
 [node name="Grab" type="Area2D" parent="Character" index="1"]
 
-position = Vector2( 42.5196, -10.6869 )
+position = Vector2( 64.526, -15.0882 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -89,8 +120,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Grab" index="0"]
 
-position = Vector2( 16, 0 )
-shape = SubResource( 2 )
+position = Vector2( 2.79616, 1.76051 )
+shape = SubResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="Character/Grab/CollisionShape2D" index="0"]
 
@@ -104,9 +135,9 @@ round_precision = 8
 
 [node name="Mark" type="Node2D" parent="Character/Grab" index="1"]
 
-editor/display_folded = true
-visible = false
-_sections_unfolded = [ "Transform" ]
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="MoveMark" type="NinePatchRect" parent="Character/Grab/Mark" index="0"]
 
@@ -129,19 +160,20 @@ patch_margin_right = 40
 patch_margin_bottom = 40
 _sections_unfolded = [ "Anchor", "Patch Margin", "Rect", "Transform", "Visibility" ]
 
-[node name="Tween" type="Tween" parent="Character/Grab" index="2"]
+[node name="Animation" type="AnimationPlayer" parent="Character/Grab/Mark" index="1"]
 
-repeat = false
+root_node = NodePath("..")
+autoplay = ""
 playback_process_mode = 1
+playback_default_blend_time = 0.0
 playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+anims/Focus = SubResource( 5 )
+blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0, -0.291992 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -164,7 +196,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Proximity" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -180,10 +212,10 @@ limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
-limit_smoothed = false
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = false
+smoothing_enabled = true
 smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
@@ -215,7 +247,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 5 )
+anims/Death = SubResource( 4 )
 blend_times = [  ]
 
 [connection signal="area_entered" from="Character/Grab" to="Character/Grab" method="can_grab"]

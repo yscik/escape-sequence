@@ -43,9 +43,11 @@ func drop():
 	grabbed = null
 
 func can_grab(movable):
+	if !State.player_skills.grab: return
+	
 	target = movable
 	movable.in_grab_range(true)
-	if target != grabbed:
+	if !grabbed:
 		focus()
 
 func cant_grab(movable):
@@ -59,7 +61,7 @@ func focus():
 	mark.rect_size = targetBounds.rect_size
 	mark.rect_position = targetBounds.rect_position
 	
-	$Tween.interpolate_property($Mark, "scale", Vector2(2,2), Vector2(1,1), 0.3, Tween.TRANS_CIRC, Tween.EASE_IN_OUT)
-	$Tween.start()
+	$Mark/Animation.play("Focus")
+	
 	$Mark.visible = true
 	

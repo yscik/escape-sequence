@@ -27,6 +27,7 @@ func build_block(pos):
 	i += 1
 	
 	if(!block): 
+		reset_pos()
 		return
 	
 	move_to(block.global_position)
@@ -50,6 +51,9 @@ func build_block(pos):
 	
 	pass
 
+func reset_pos():
+	move_to(global_position)
+	
 func set_pos(pos):
 	
 	if !$Cursor || !$Cursor.working:

@@ -1,7 +1,8 @@
 extends "res://Prefabs/Movable.gd"
 
 func _ready():
-	offset = true
+#	offset = true
+	pass
 
 func on_ui(cursor):
 	if cursor.grabbed:
@@ -12,3 +13,4 @@ func on_ui(cursor):
 	cursor.position = Vector2(-45,-60)
 	add_child(cursor)
 	$MoveUiMark/Animation.play("Activate")
+	State.game.set_visual(4)

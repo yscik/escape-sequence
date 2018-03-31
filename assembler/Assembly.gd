@@ -10,7 +10,9 @@ func build():
 	var map = $Level/TileMap
 	var cell = map.get_target()
 	
-	if cell == null: return
+	if cell == null: 
+		$Builder.reset_pos()
+		return
 	
 	$Builder.build_block(map.to_global(map.map_to_world(cell) + Vector2(32,32)))
 	yield($Builder, "built")
