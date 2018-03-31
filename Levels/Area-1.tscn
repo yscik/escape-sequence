@@ -651,39 +651,41 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Tile" parent="." index="11" instance=ExtResource( 11 )]
+[node name="Tiles" type="Node2D" parent="." index="11"]
+
+[node name="Tile" parent="Tiles" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( -1375.54, 157.787 )
 
-[node name="Tile2" parent="." index="12" instance=ExtResource( 11 )]
+[node name="Tile2" parent="Tiles" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( -1439.54, 157.787 )
 
-[node name="Tile3" parent="." index="13" instance=ExtResource( 11 )]
+[node name="Tile3" parent="Tiles" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( -1503.54, 157.787 )
 
-[node name="Tile4" parent="." index="14" instance=ExtResource( 11 )]
+[node name="Tile4" parent="Tiles" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( -1631.54, -610.213 )
 
-[node name="Tile5" parent="." index="15" instance=ExtResource( 11 )]
+[node name="Tile5" parent="Tiles" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( -1503.54, 94.7872 )
 
-[node name="Tile6" parent="." index="16" instance=ExtResource( 11 )]
+[node name="Tile6" parent="Tiles" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( -1439.54, 94.7872 )
 
-[node name="Tile7" parent="." index="17" instance=ExtResource( 11 )]
+[node name="Tile7" parent="Tiles" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( -1375.54, -353.213 )
 
-[node name="Tile8" parent="." index="18" instance=ExtResource( 11 )]
+[node name="Tile8" parent="Tiles" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( -1375.54, -801.213 )
 
-[node name="Tile9" parent="." index="19" instance=ExtResource( 11 )]
+[node name="Tile9" parent="Tiles" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( -1629.69, -671.985 )
 

@@ -234,7 +234,7 @@ texture = ExtResource( 9 )
 
 [node name="Checkpoint" parent="." index="5" instance=ExtResource( 10 )]
 
-position = Vector2( -79.5227, -74.0356 )
+position = Vector2( -107.523, -74.0356 )
 skill_right = false
 skill_left = false
 skill_up = false

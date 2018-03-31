@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Prefabs/Pickup.gd" type="Script" id=1]
 [ext_resource path="res://ui/DownKey.png" type="Texture" id=2]
+[ext_resource path="res://audio/Opa Sid Kit_bip.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -75,6 +76,7 @@ tracks/2/keys = {
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 skill = ""
+visual = null
 
 [node name="Key" type="Sprite" parent="." index="0"]
 
@@ -110,6 +112,14 @@ anims/Float = SubResource( 2 )
 anims/Pickup = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="Area2D" to="." method="player_collects"]
 

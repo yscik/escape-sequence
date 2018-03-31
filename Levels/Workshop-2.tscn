@@ -22,7 +22,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 492.993, 137.732 )
 
-[node name="Workshop-2" type="Node2D"]
+[node name="Workshop-2" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -200,7 +200,7 @@ marker_when_inactive = false
 
 [node name="Tile" parent="Platform-Assembling" index="3" instance=ExtResource( 16 )]
 
-position = Vector2( -484, -798 )
+position = Vector2( -512, -768 )
 
 [node name="Door2" parent="Platform-Assembling" index="4" instance=ExtResource( 15 )]
 

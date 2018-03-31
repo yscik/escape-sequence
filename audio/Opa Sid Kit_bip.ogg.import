@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Opa Sid Kit_bip.ogg-13ce31ba3d26d32ed569780872edb83c.oggstr"
+
+[deps]
+
+source_file="res://audio/Opa Sid Kit_bip.ogg"
+source_md5="82f8496f7d0ced497b95e19ae3c966cd"
+
+dest_files=[ "res://.import/Opa Sid Kit_bip.ogg-13ce31ba3d26d32ed569780872edb83c.oggstr" ]
+dest_md5="984cf2b3d20b7fad51a4ca2860bea838"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -13,11 +13,12 @@ func _ready():
 
 func on():
 	grabbed = false
-	
+	sfx()
 	pass
 
 func off():
 	grabbed = true
+	sfx()
 	pass
 
 func seen(on):
@@ -30,3 +31,6 @@ func in_grab_range(on):
 #		anim.play("Pulse",-1, 1)
 #	else:
 #		anim.stop()
+
+func sfx():
+	$"/root/Game/SFX/Tile".play(7.1)
