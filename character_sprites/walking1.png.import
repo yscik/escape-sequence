@@ -7,10 +7,10 @@ path="res://.import/walking1.png-8bbe2f4bb8964cfdcec061f0b0329e8e.stex"
 [deps]
 
 source_file="res://character_sprites/walking1.png"
-source_md5="5e9f1a4c99df67075f64401be39a311e"
+source_md5="faafadec9d8ee13fb546a9715674dbf0"
 
 dest_files=[ "res://.import/walking1.png-8bbe2f4bb8964cfdcec061f0b0329e8e.stex" ]
-dest_md5="6cfa871be78144a45c0489b013c647d4"
+dest_md5="23e214a4757654f826808c7b5dd320b8"
 
 [params]
 

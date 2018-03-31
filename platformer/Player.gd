@@ -23,7 +23,10 @@ func spawn(pos):
 	area_update()
 
 func die_and_respawn():
+	if !movement.enabled: return
+	
 	movement.enabled = false
+	$Character/AnimatedSprite.play("Idle")
 	$Animations.play("Death")
 	yield($Animations, "animation_finished")
 	spawn(State.checkpoint.global_position)

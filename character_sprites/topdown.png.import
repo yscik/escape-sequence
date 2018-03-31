@@ -7,10 +7,10 @@ path="res://.import/topdown.png-e738a69111db06f1cd6769f1fc1a4bba.stex"
 [deps]
 
 source_file="res://character_sprites/topdown.png"
-source_md5="94c64de2b13307794de6488061ba02a1"
+source_md5="00da212987205940e8fd7563e2af42e5"
 
 dest_files=[ "res://.import/topdown.png-e738a69111db06f1cd6769f1fc1a4bba.stex" ]
-dest_md5="75e7d8a7948eaa303d52ba64762743f6"
+dest_md5="1cdf4ea0a5ca0755bc9df21c9ebb4a71"
 
 [params]
 

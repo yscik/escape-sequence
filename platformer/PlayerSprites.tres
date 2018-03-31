@@ -1,12 +1,13 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=2]
+[gd_resource type="SpriteFrames" load_steps=9 format=2]
 
 [ext_resource path="res://character_sprites/idle.png" type="Texture" id=1]
-[ext_resource path="res://character_sprites/falling.png" type="Texture" id=2]
-[ext_resource path="res://character_sprites/topdown.png" type="Texture" id=3]
-[ext_resource path="res://character_sprites/walking1.png" type="Texture" id=4]
-[ext_resource path="res://character_sprites/walking2.png" type="Texture" id=5]
-[ext_resource path="res://character_sprites/walking3.png" type="Texture" id=6]
-[ext_resource path="res://character_sprites/jumping.png" type="Texture" id=7]
+[ext_resource path="res://character_sprites/walking1.png" type="Texture" id=2]
+[ext_resource path="res://character_sprites/walking2.png" type="Texture" id=3]
+[ext_resource path="res://character_sprites/walking3.png" type="Texture" id=4]
+[ext_resource path="res://character_sprites/topdown_grabbing.png" type="Texture" id=5]
+[ext_resource path="res://character_sprites/falling.png" type="Texture" id=6]
+[ext_resource path="res://character_sprites/topdown.png" type="Texture" id=7]
+[ext_resource path="res://character_sprites/jumping.png" type="Texture" id=8]
 
 [resource]
 
@@ -16,22 +17,27 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "Fall",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Topdown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Topdown_Grab",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Fall",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Topdown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 25.0

@@ -7,10 +7,10 @@ path="res://.import/jumping.png-31fedffa775f9b6244cca15a1414c195.stex"
 [deps]
 
 source_file="res://character_sprites/jumping.png"
-source_md5="f6f61227e24a305bef5c9b96897fc0aa"
+source_md5="c6e9a7d52d47668f39b4974ab417c3c6"
 
 dest_files=[ "res://.import/jumping.png-31fedffa775f9b6244cca15a1414c195.stex" ]
-dest_md5="018162f2ca9d86431d9428c48d806578"
+dest_md5="47ed73503d49dd9dca58803ccbef214d"
 
 [params]
 

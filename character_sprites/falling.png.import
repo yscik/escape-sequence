@@ -7,10 +7,10 @@ path="res://.import/falling.png-c56e886099efd235ccbe5db5dc588b5c.stex"
 [deps]
 
 source_file="res://character_sprites/falling.png"
-source_md5="6adc49991498da172f2979438835ee53"
+source_md5="9184954461d2f770338158ebf8226186"
 
 dest_files=[ "res://.import/falling.png-c56e886099efd235ccbe5db5dc588b5c.stex" ]
-dest_md5="db547e520c9b482601ce47232b4b5b4a"
+dest_md5="a833dc5ff70812abe316c6da03270f08"
 
 [params]
 

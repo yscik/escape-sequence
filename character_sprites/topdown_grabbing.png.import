@@ -7,10 +7,10 @@ path="res://.import/topdown_grabbing.png-f1364c9d2d08a7458c15fc6ff514fffb.stex"
 [deps]
 
 source_file="res://character_sprites/topdown_grabbing.png"
-source_md5="4457a6f1fb00c8205c7bddfc74d35bca"
+source_md5="746a072330b07c838b4ccae7efb05df9"
 
 dest_files=[ "res://.import/topdown_grabbing.png-f1364c9d2d08a7458c15fc6ff514fffb.stex" ]
-dest_md5="6dc697bdf25bd9d2eb52951a8100be2e"
+dest_md5="4a53e3f811b5667ac90c702adb946571"
 
 [params]
 
